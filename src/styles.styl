@@ -1,10 +1,12 @@
-
+@import 'styles/fonts'
 @import 'styles/container'
+
+default-font = 'Sarasa UI SC', 'Noto Sans', 'San Fransisco', 'Segoe UI', 'Source Han Sans SC', 'Microsoft Yahei UI', sans-serif
 
 body {
   margin: 0
   padding: 0
-  font: var(--theme-font)
+  font: var(--theme-font, default-font)
 }
 
 generate-padding(pad-base) {
@@ -19,6 +21,20 @@ generate-padding(pad-base) {
   --theme-pad-08: pad-base * 12
   --theme-pad-09: pad-base * 16
   --theme-pad-10: pad-base * 32
+  // Container
+  --theme-container-pad: pad-base * 3
+}
+
+generate-font-size(size-base) {
+  --theme-size-small: size-base * 0.75
+  --theme-size-base: size-base
+  --theme-size-larger: size-base * 1.25
+  --theme-size-large: size-base * 1.5
+  --theme-size-h4: size-base * 1.5
+  --theme-size-h3: size-base * 2
+  --theme-size-h2: size-base * 2.5
+  --theme-size-h1: size-base * 3
+  --theme-size-jumbotron: size-base * 4.5
 }
 
 .normal-theme {
@@ -50,10 +66,11 @@ generate-padding(pad-base) {
   /* Blue 2 */
   --theme-info: #B0C2FF
   // Fonts
-  --theme-font: 'Noto Sans', 'San Fransisco', 'Segoe UI', 'Source Han Sans SC', 'Microsoft Yahei UI', sans-serif
+  --theme-font: 'Sarasa UI SC', 'Noto Sans', 'San Fransisco', 'Segoe UI', 'Source Han Sans SC', 'Microsoft Yahei UI', sans-serif
   // padding
   // theme-pad-base: 8px
   generate-padding: 8px
+  generate-font-size: 16px
   // pages
   --theme-page-lg: theme-page-lg
   --theme-page-md: theme-page-md
@@ -61,4 +78,69 @@ generate-padding(pad-base) {
   --theme-breakpoint-lg: theme-breakpoint-lg
   --theme-breakpoint-md: theme-breakpoint-md
   --theme-breakpoint-sm: theme-breakpoint-sm
+}
+
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+label {
+  font-family: var(--theme-font)
+  font-size: var(--theme-size-base)
+  line-height: 150%
+}
+
+h1 {
+  font-size: var(--theme-size-h1)
+  font-weight: 300
+}
+
+h2 {
+  font-size: var(--theme-size-h2)
+  font-weight: 400
+}
+
+h3 {
+  font-size: var(--theme-size-h3)
+  font-weight: 400
+}
+
+h4 {
+  font-size: var(--theme-size-h4)
+  font-weight: 500
+}
+
+textbox-default-background-color = var(--theme-base07)
+textbox-default-text-color = var(--theme-base01)
+textbox-default-placeholder-color = var(--theme-base05)
+textbox-default-border-color = var(--theme-base05)
+textbox-default-accent-color = var(--theme-accent)
+
+input {
+  width: 100%
+  display: flex
+  padding: var(--theme-pad-02) var(--theme-pad-03)
+  background-color: var(--textbox-background-color, textbox-default-background-color)
+  color: var(--textbox-text-color, textbox-default-text-color)
+  border-style: solid
+  border-width: 2px
+  border-color: var(--textbox-border-color, textbox-default-border-color)
+  font-family: inherit
+  font-weight: normal
+  font-size: var(--theme-size-base)
+  transition: border-color 150ms ease-in-out
+
+  &::placeholder {
+    color: var(--textbox-placeholder-color, textbox-default-placeholder-color)
+  }
+
+  &:focus {
+    border-color: var(--textbox-accent-color, textbox-default-accent-color)
+  }
 }

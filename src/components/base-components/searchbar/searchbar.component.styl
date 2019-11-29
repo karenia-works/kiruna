@@ -1,0 +1,33 @@
+searchbar-default-background-color = var(--theme-base07)
+searchbar-default-text-color = var(--theme-base01)
+searchbar-default-placeholder-color = var(--theme-base05)
+searchbar-default-border-color = var(--theme-base05)
+searchbar-default-accent-color = var(--theme-accent)
+
+.searchbar {
+  display: flex
+  flex-direction: row
+  justify-content: stretch
+}
+
+.search-box {
+  width: 100%
+  display: flex
+  padding: var(--theme-pad-02) var(--theme-pad-03)
+  background-color: var(--searchbar-background-color, searchbar-default-background-color)
+  color: var(--searchbar-text-color, searchbar-default-text-color)
+  border-style: solid
+  border-width: 2px
+  border-color: var(--searchbar-border-color, searchbar-default-border-color)
+  font-family: inherit
+  font-weight: normal
+  font-size: var(--theme-size-base)
+
+  &::placeholder {
+    color: var(--searchbar-placeholder-color, searchbar-default-placeholder-color)
+  }
+
+  &:focus {
+    border-color: var(--searchbar-accent-color, searchbar-default-accent-color)
+  }
+}

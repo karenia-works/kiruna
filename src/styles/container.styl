@@ -23,6 +23,12 @@ generate-breakpoints(breakpoints, widths) {
     margin-right: auto
     width: widths[length(widths) -1]
   }
+
+  @media screen and (max-width: breakpoints[0]) {
+    margin-left: var(--theme-container-pad)
+    margin-right: var(--theme-container-pad)
+    width: auto
+  }
 }
 
 .container {
