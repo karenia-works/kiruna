@@ -7,13 +7,9 @@ searchbar-default-accent-color = var(--theme-accent)
 .searchbar {
   display: flex
   flex-direction: row
-  justify-content: stretch
-}
-
-.search-box {
+  justify-content: flex-start
   width: 100%
-  display: flex
-  padding: var(--theme-pad-02) var(--theme-pad-03)
+  padding: var(--theme-pad-00) var(--theme-pad-03)
   background-color: var(--searchbar-background-color, searchbar-default-background-color)
   color: var(--searchbar-text-color, searchbar-default-text-color)
   border-style: solid
@@ -22,12 +18,32 @@ searchbar-default-accent-color = var(--theme-accent)
   font-family: inherit
   font-weight: normal
   font-size: var(--theme-size-base)
+  transition: border-color 150ms ease-in-out
+
+  &:focus-within {
+    border-color: var(--searchbar-accent-color, searchbar-default-accent-color)
+  }
+}
+
+.search-item {
+  padding: var(--theme-pad-03) var(--theme-pad-03)
+  display: flex
+  flex-direction: row
+  align-items: center
+  font-weight: 700
+  color: var(--searchbar-accent-color, searchbar-default-accent-color)
+}
+
+.search-box {
+  display: flex
+  padding: var(--theme-pad-03) var(--theme-pad-03)
+  color: var(--searchbar-text-color, searchbar-default-text-color)
+  background-color: transparent
+  font-size: inherit
+  border: none
+  flex-grow: 1
 
   &::placeholder {
     color: var(--searchbar-placeholder-color, searchbar-default-placeholder-color)
-  }
-
-  &:focus {
-    border-color: var(--searchbar-accent-color, searchbar-default-accent-color)
   }
 }
