@@ -1,4 +1,44 @@
 
-body {
-  background: black
+.nav {
+  // variables
+  --navbar-height: 36px * 2.5
+  // props
+  display: flex
+  flex-direction: row
+  align-items: stretch
+  height: var(--navbar-height)
+  background-color: var(--theme-base02)
+  color: var(--theme-base07)
+}
+
+.nav-item {
+  padding-left: var(--theme-pad-04)
+  padding-right: var(--theme-pad-04)
+  display: flex
+  align-items: center
+  flex-direction: row
+  font-family: var(--theme-font)
+  font-weight: 400
+  transition: background-color 250ms ease-in-out
+
+  &:first-child {
+    padding-left: var(--theme-pad-05)
+  }
+
+  &.push {
+    margin-left: auto
+  }
+
+  &.right:last-child {
+    padding-right: var(--theme-pad-05)
+  }
+
+  &:hover {
+    background-color: var(--theme-base01)
+  }
+}
+
+.logo {
+  object-fit: cover
+  height: 36px
 }

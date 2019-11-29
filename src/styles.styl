@@ -2,6 +2,21 @@
 body {
   margin: 0
   padding: 0
+  font: var(--theme-font)
+}
+
+generate-padding(pad-base) {
+  --theme-pad-00: 0px
+  --theme-pad-01: pad-base * 0.5
+  --theme-pad-02: pad-base
+  --theme-pad-03: pad-base * 2
+  --theme-pad-04: pad-base * 3
+  --theme-pad-05: pad-base * 4
+  --theme-pad-06: pad-base * 6
+  --theme-pad-07: pad-base * 8
+  --theme-pad-08: pad-base * 12
+  --theme-pad-09: pad-base * 16
+  --theme-pad-10: pad-base * 32
 }
 
 .normal-theme {
@@ -34,4 +49,14 @@ body {
   --theme-info: #B0C2FF
   // Fonts
   --theme-font: 'Noto Sans', 'San Fransisco', 'Segoe UI', 'Source Han Sans SC', 'Microsoft Yahei UI', sans-serif
+  // padding
+  // theme-pad-base: 8px
+  generate-padding: 8px
+  // page
+  --theme-page-lg: 1280px
+  --theme-page-md: 960px
+  --theme-page-sm: 640px
+  --theme-breakpoint-lg: 1360px
+  --theme-breakpoint-md: 1080px
+  --theme-breakpoint-sm: 720px
 }
