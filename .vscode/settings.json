@@ -1,0 +1,10 @@
+{
+  "stylusSupremacy.insertNewLineAroundProperties": true,
+  "stylusSupremacy.selectorSeparator": ",\n",
+  "stylusSupremacy.insertSemicolons": false,
+  "[stylus]": {
+    "editor.formatOnType": false
+  },
+  "stylusSupremacy.insertNewLineAroundOthers": true,
+  "stylusSupremacy.preserveNewLinesBetweenPropertyValues": true
+}
