@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import 'styles/container'
+
 body {
   margin: 0
   padding: 0
@@ -52,11 +54,11 @@ generate-padding(pad-base) {
   // padding
   // theme-pad-base: 8px
   generate-padding: 8px
-  // page
-  --theme-page-lg: 1280px
-  --theme-page-md: 960px
-  --theme-page-sm: 640px
-  --theme-breakpoint-lg: 1360px
-  --theme-breakpoint-md: 1080px
-  --theme-breakpoint-sm: 720px
+  // pages
+  --theme-page-lg: theme-page-lg
+  --theme-page-md: theme-page-md
+  --theme-page-sm: theme-page-sm
+  --theme-breakpoint-lg: theme-breakpoint-lg
+  --theme-breakpoint-md: theme-breakpoint-md
+  --theme-breakpoint-sm: theme-breakpoint-sm
 }
