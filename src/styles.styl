@@ -3,10 +3,20 @@
 
 default-font = 'Sarasa UI SC', 'Noto Sans', 'San Fransisco', 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'Source Han Sans SC', 'Microsoft Yahei UI', sans-serif
 
+html {
+  min-height: 100vh
+}
+
 body {
   margin: 0
   padding: 0
+  min-height: 100vh
   font: var(--theme-font, default-font)
+}
+
+app-root {
+  display: block
+  min-height: 100vh
 }
 
 generate-padding(pad-base) {
