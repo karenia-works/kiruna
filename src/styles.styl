@@ -130,6 +130,8 @@ textbox-default-accent-color = var(--theme-accent)
 .textbox {
   width: 100%
   display: flex
+  flex-direction: row
+  align-items: center
   padding: var(--theme-pad-02) var(--theme-pad-03)
   background-color: var(--textbox-background-color, textbox-default-background-color)
   color: var(--textbox-text-color, textbox-default-text-color)
@@ -147,5 +149,33 @@ textbox-default-accent-color = var(--theme-accent)
 
   &:focus {
     border-color: var(--textbox-accent-color, textbox-default-accent-color)
+  }
+}
+
+btn-default-background-color = var(--theme-base07)
+btn-default-text-color = var(--theme-accent)
+btn-default-border-color = var(--theme-accent)
+btn-default-accent-color = var(--theme-accent)
+btn-default-highlight-color = var(--theme-accent)
+btn-default-highlight-text-color = var(--theme-base07)
+
+.btn {
+  display: flex
+  flex-direction: row
+  align-items: center
+  padding: var(--theme-pad-02) var(--theme-pad-03)
+  background-color: var(--btn-background-color, btn-default-background-color)
+  color: var(--btn-text-color, btn-default-text-color)
+  border-style: solid
+  border-width: 2px
+  border-color: var(--btn-border-color, btn-default-border-color)
+  font-family: inherit
+  font-weight: bold
+  font-size: var(--theme-size-base)
+  transition: all 150ms ease-in-out
+
+  &:hover {
+    color: var(--btn-highlight-text-color, btn-default-highlight-text-color)
+    background-color: var(--btn-highlight-color, btn-default-highlight-color)
   }
 }

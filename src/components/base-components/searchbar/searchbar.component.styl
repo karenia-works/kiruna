@@ -4,11 +4,16 @@ searchbar-default-placeholder-color = var(--theme-base05)
 searchbar-default-border-color = var(--theme-base05)
 searchbar-default-accent-color = var(--theme-accent)
 
+.searchbar-wrap {
+  display: flex
+  flex-direction: row
+}
+
 .searchbar {
   display: flex
   flex-direction: row
   justify-content: flex-start
-  width: 100%
+  flex-grow: 1
   padding: var(--theme-pad-00) var(--theme-pad-03)
   background-color: var(--searchbar-background-color, searchbar-default-background-color)
   color: var(--searchbar-text-color, searchbar-default-text-color)
@@ -46,4 +51,15 @@ searchbar-default-accent-color = var(--theme-accent)
   &::placeholder {
     color: var(--searchbar-placeholder-color, searchbar-default-placeholder-color)
   }
+}
+
+.search-btn {
+  font-weight: 500
+  margin: var(--theme-pad-00) var(--theme-pad-03)
+  padding: var(--theme-pad-02) var(--theme-pad-04)
+  --btn-border-color: var(--theme-accent-alter)
+  --btn-background-color: var(--theme-base02)
+  --btn-highlight-color: var(--theme-accent)
+  --btn-highlight-text-color: var(--theme-base07)
+  --btn-text-color: var(--theme-accent-alter)
 }
