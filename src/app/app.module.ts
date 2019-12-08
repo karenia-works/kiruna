@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseComponentsModule } from 'src/components/base-components/base-components.module';
 import { MainpageModule } from 'src/pages/mainpage/mainpage.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterOutlet } from '@angular/router';
+import { SearchpageModule } from 'src/pages/searchpage/searchpage.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +16,8 @@ import { MainpageModule } from 'src/pages/mainpage/mainpage.module';
     AppRoutingModule,
     BaseComponentsModule,
     MainpageModule,
+    BrowserAnimationsModule,
+    SearchpageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
