@@ -196,3 +196,19 @@ btn-default-highlight-text-color = var(--theme-base07)
     background-color: var(--btn-highlight-color, btn-default-highlight-color)
   }
 }
+
+.tag-container {
+  display: flex
+  flex-direction: row
+  margin-left: calc(var(--theme-pad-01) * -1)
+  margin-right: calc(var(--theme-pad-01) * -1)
+  flex-wrap: wrap
+}
+
+.tag {
+  background-color: var(--theme-base06)
+  color: var(--theme-base01)
+  font-weight: normal
+  padding: calc((var(--theme-pad-01) / 2)) var(--theme-pad-01)
+  margin: 0 var(--theme-pad-01)
+}
