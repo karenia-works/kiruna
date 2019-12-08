@@ -1,7 +1,7 @@
 <div class="app normal-theme">
   <app-navbar></app-navbar>
-  <div class="router-wrapper">
-    <router-outlet></router-outlet>
+  <div class="router-wrapper" [@routerAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
   </div>
   <app-footer></app-footer>
 </div>
