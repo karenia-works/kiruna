@@ -1,7 +1,7 @@
 searchbar-default-background-color = var(--theme-base07)
 searchbar-default-text-color = var(--theme-base01)
-searchbar-default-placeholder-color = var(--theme-base05)
-searchbar-default-border-color = var(--theme-base05)
+searchbar-default-placeholder-color = var(--theme-base02)
+searchbar-default-border-color = var(--theme-base04)
 searchbar-default-accent-color = var(--theme-accent)
 
 .searchbar-wrap {
@@ -24,6 +24,10 @@ searchbar-default-accent-color = var(--theme-accent)
   font-weight: normal
   font-size: var(--theme-size-base)
   transition: border-color 150ms ease-in-out
+
+  &::placeholder {
+    color: var(--searchbar-placeholder-color, searchbar-default-placeholder-color)
+  }
 
   &:focus-within {
     border-color: var(--searchbar-accent-color, searchbar-default-accent-color)
@@ -57,9 +61,9 @@ searchbar-default-accent-color = var(--theme-accent)
   font-weight: 500
   margin: var(--theme-pad-00) var(--theme-pad-03)
   padding: var(--theme-pad-02) var(--theme-pad-04)
-  --btn-border-color: var(--theme-accent-alter)
-  --btn-background-color: var(--theme-base02)
-  --btn-highlight-color: var(--theme-accent)
-  --btn-highlight-text-color: var(--theme-base07)
-  --btn-text-color: var(--theme-accent-alter)
+  // --btn-border-color: var(--theme-accent-alter)
+  // --btn-background-color: var(--theme-base02)
+  // --btn-highlight-color: var(--theme-accent)
+  // --btn-highlight-text-color: var(--theme-base07)
+  // --btn-text-color: var(--theme-accent-alter)
 }

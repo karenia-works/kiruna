@@ -1,5 +1,6 @@
 @import 'styles/fonts'
 @import 'styles/container'
+@import 'styles/colors'
 
 default-font = 'Sarasa UI SC', 'Noto Sans', 'San Fransisco', 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'Source Han Sans SC', 'Microsoft Yahei UI', sans-serif
 
@@ -17,6 +18,8 @@ body {
 app-root {
   display: block
   min-height: 100vh
+
+  @extend .root-color-palette
 }
 
 generate-padding(pad-base) {
@@ -47,34 +50,34 @@ generate-font-size(size-base) {
   --theme-size-jumbotron: size-base * 4.5
 }
 
-.normal-theme {
+.base-theme {
   /* Black */
-  --theme-base00: #000000
+  --theme-base00: var(--palette-base00)
   /* Gray 1 */
-  --theme-base01: #343637
+  --theme-base01: var(--palette-base01)
   /* Gray 2 */
-  --theme-base02: #484C4D
+  --theme-base02: var(--palette-base02)
   /* Gray 3 */
-  --theme-base03: #7B8083
+  --theme-base03: var(--palette-base03)
   /* Gray 4 */
-  --theme-base04: #B9C7CB
+  --theme-base04: var(--palette-base04)
   /* Gray 5 */
-  --theme-base05: #DCDFE0
+  --theme-base05: var(--palette-base05)
   /* Gray 6 */
-  --theme-base06: #E9F1F2
+  --theme-base06: var(--palette-base06)
   /* White */
-  --theme-base07: #FFFFFF
+  --theme-base07: var(--palette-base07)
   /* Red */
-  --theme-err: #E63E52
+  --theme-err: var(--palette-err)
   /* Orange */
-  --theme-warn: #FF8C05
+  --theme-warn: var(--palette-warn)
   /* Green 2 */
-  --theme-accent: #27A881
+  --theme-accent: var(--palette-accent)
   /* Green 3 */
-  --theme-accent-alter: #16D0AF
-  --theme-accept: #16D0AF
+  --theme-accent-alter: var(--palette-accent-alter)
+  --theme-accept: var(--palette-accept)
   /* Blue 2 */
-  --theme-info: #B0C2FF
+  --theme-info: var(--palette-info)
   // Fonts
   --theme-font: 'Sarasa UI SC', 'Noto Sans', 'San Fransisco', 'Segoe UI', 'Source Han Sans SC', 'Microsoft Yahei UI', sans-serif
   // padding
@@ -88,6 +91,72 @@ generate-font-size(size-base) {
   --theme-breakpoint-lg: theme-breakpoint-lg
   --theme-breakpoint-md: theme-breakpoint-md
   --theme-breakpoint-sm: theme-breakpoint-sm
+}
+
+.base-color-theme {
+  /* Black */
+  --theme-base00: var(--palette-base00)
+  /* Gray 1 */
+  --theme-base01: var(--palette-base01)
+  /* Gray 2 */
+  --theme-base02: var(--palette-base02)
+  /* Gray 3 */
+  --theme-base03: var(--palette-base03)
+  /* Gray 4 */
+  --theme-base04: var(--palette-base04)
+  /* Gray 5 */
+  --theme-base05: var(--palette-base05)
+  /* Gray 6 */
+  --theme-base06: var(--palette-base06)
+  /* White */
+  --theme-base07: var(--palette-base07)
+  /* Red */
+  --theme-err: var(--palette-err)
+  /* Orange */
+  --theme-warn: var(--palette-warn)
+  /* Green 2 */
+  --theme-accent: var(--palette-accent)
+  /* Green 3 */
+  --theme-accent-alter: var(--palette-accent-alter)
+  --theme-accept: var(--palette-accept)
+  /* Blue 2 */
+  --theme-info: var(--palette-info)
+}
+
+.inverted-color-theme {
+  /* Black */
+  --theme-base00: var(--palette-base07)
+  /* Gray 1 */
+  --theme-base01: var(--palette-base06)
+  /* Gray 2 */
+  --theme-base02: var(--palette-base05)
+  /* Gray 3 */
+  --theme-base03: var(--palette-base04)
+  /* Gray 4 */
+  --theme-base04: var(--palette-base03)
+  /* Gray 5 */
+  --theme-base05: var(--palette-base02)
+  /* Gray 6 */
+  --theme-base06: var(--palette-base01)
+  /* White */
+  --theme-base07: var(--palette-base00)
+  /* Red */
+  --theme-err: var(--palette-err)
+  /* Orange */
+  --theme-warn: var(--palette-warn)
+  /* Green 2 */
+  --theme-accent: var(--palette-accent-alter)
+  /* Green 3 */
+  --theme-accent-alter: var(--palette-accent)
+  --theme-accept: var(--palette-accept)
+  /* Blue 2 */
+  --theme-info: var(--palette-info)
+  // ===== Buttons =====
+  --btn-border-color: var(--theme-accent)
+  --btn-background-color: var(--theme-base05)
+  --btn-highlight-color: var(--theme-accent)
+  --btn-highlight-text-color: var(--theme-base00)
+  --btn-text-color: var(--theme-accent)
 }
 
 p,
@@ -140,7 +209,7 @@ a {
 
 textbox-default-background-color = var(--theme-base07)
 textbox-default-text-color = var(--theme-base01)
-textbox-default-placeholder-color = var(--theme-base05)
+textbox-default-placeholder-color = var(--theme-base02)
 textbox-default-border-color = var(--theme-base05)
 textbox-default-accent-color = var(--theme-accent)
 
@@ -162,6 +231,7 @@ textbox-default-accent-color = var(--theme-accent)
 
   &::placeholder {
     color: var(--textbox-placeholder-color, textbox-default-placeholder-color)
+    opacity: 1
   }
 
   &:focus {
@@ -194,6 +264,17 @@ btn-default-highlight-text-color = var(--theme-base07)
   &:hover {
     color: var(--btn-highlight-text-color, btn-default-highlight-text-color)
     background-color: var(--btn-highlight-color, btn-default-highlight-color)
+  }
+
+  &.-btn {
+    background-color: var(--btn-background-color, var(--theme-base06))
+    color: var(--btn-text-color, var(--theme-accent))
+    border-color: var(--btn-border-color, var(--theme-accent))
+
+    &:hover {
+      color: var(--btn-highlight-text-color, var(--theme-base00))
+      background-color: var(--btn-highlight-color, var(--theme-accent))
+    }
   }
 }
 
