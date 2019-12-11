@@ -2,6 +2,15 @@
 # yarn lockfile v1
 
 
+"@angular-builders/custom-webpack@^8.4.1":
+  version "8.4.1"
+  resolved "https://registry.npm.taobao.org/@angular-builders/custom-webpack/download/@angular-builders/custom-webpack-8.4.1.tgz#f16583afe78e104d408c263dcb0d4345ce0be570"
+  integrity sha1-8WWDr+eOEE1AjCY9yw1DRc4L5XA=
+  dependencies:
+    lodash "^4.17.10"
+    ts-node "^8.5.2"
+    webpack-merge "^4.2.1"
+
 "@angular-devkit/architect@0.803.19":
   version "0.803.19"
   resolved "https://registry.npm.taobao.org/@angular-devkit/architect/download/@angular-devkit/architect-0.803.19.tgz?cache=0&sync_timestamp=1574301441848&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40angular-devkit%2Farchitect%2Fdownload%2F%40angular-devkit%2Farchitect-0.803.19.tgz#03c13c94cd9c71f6a6c74b80b7323b973325a1fc"
@@ -1304,6 +1313,11 @@ are-we-there-yet@~1.1.2:
   dependencies:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
+
+arg@^4.1.0:
+  version "4.1.2"
+  resolved "https://registry.npm.taobao.org/arg/download/arg-4.1.2.tgz?cache=0&sync_timestamp=1574701334119&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Farg%2Fdownload%2Farg-4.1.2.tgz#e70c90579e02c63d80e3ad4e31d8bfdb8bd50064"
+  integrity sha1-5wyQV54Cxj2A461OMdi/24vVAGQ=
 
 argparse@^1.0.7:
   version "1.0.10"
@@ -2744,6 +2758,11 @@ diff@^3.1.0, diff@^3.2.0:
   version "3.5.0"
   resolved "https://registry.npm.taobao.org/diff/download/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
   integrity sha1-gAwN0eCov7yVg1wgKtIg/jF+WhI=
+
+diff@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.npm.taobao.org/diff/download/diff-4.0.1.tgz#0c667cb467ebbb5cea7f14f135cc2dba7780a8ff"
+  integrity sha1-DGZ8tGfru1zqfxTxNcwtuneAqP8=
 
 diffie-hellman@^5.0.0:
   version "5.0.3"
@@ -4724,7 +4743,7 @@ lodash.clonedeep@^4.5.0:
   resolved "https://registry.npm.taobao.org/lodash.clonedeep/download/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
-lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.17.5:
+lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.15"
   resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.15.tgz?cache=0&sync_timestamp=1569522001300&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash%2Fdownload%2Flodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha1-tEf2ZwoEVbv+7dETku/zMOoJdUg=
@@ -4756,6 +4775,14 @@ lost-grid@^5.1.6:
   version "5.1.6"
   resolved "https://registry.npm.taobao.org/lost-grid/download/lost-grid-5.1.6.tgz#b6213ffed6b4dc038f61f90e8e585bab439c6f5c"
   integrity sha1-tiE//ta03AOPYfkOjlhbq0Ocb1w=
+
+lost@^8.3.1:
+  version "8.3.1"
+  resolved "https://registry.npm.taobao.org/lost/download/lost-8.3.1.tgz#9fc6cbfff831264466cc30ab8fba5741945add7a"
+  integrity sha1-n8bL//gxJkRmzDCrj7pXQZRa3Xo=
+  dependencies:
+    object-assign "^4.1.1"
+    postcss "7.0.14"
 
 lru-cache@4.1.x:
   version "4.1.5"
@@ -5834,6 +5861,15 @@ postcss-value-parser@^4.0.0:
   version "4.0.2"
   resolved "https://registry.npm.taobao.org/postcss-value-parser/download/postcss-value-parser-4.0.2.tgz#482282c09a42706d1fc9a069b73f44ec08391dc9"
   integrity sha1-SCKCwJpCcG0fyaBptz9E7Ag5Hck=
+
+postcss@7.0.14:
+  version "7.0.14"
+  resolved "https://registry.npm.taobao.org/postcss/download/postcss-7.0.14.tgz?cache=0&sync_timestamp=1575658697020&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss%2Fdownload%2Fpostcss-7.0.14.tgz#4527ed6b1ca0d82c53ce5ec1a2041c2346bbd6e5"
+  integrity sha1-RSftaxyg2CxTzl7BogQcI0a71uU=
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
 
 postcss@7.0.17:
   version "7.0.17"
@@ -7389,6 +7425,17 @@ trim-right@^1.0.1:
   resolved "https://registry.npm.taobao.org/trim-right/download/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
+ts-node@^8.5.2:
+  version "8.5.4"
+  resolved "https://registry.npm.taobao.org/ts-node/download/ts-node-8.5.4.tgz?cache=0&sync_timestamp=1574960573912&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fts-node%2Fdownload%2Fts-node-8.5.4.tgz#a152add11fa19c221d0b48962c210cf467262ab2"
+  integrity sha1-oVKt0R+hnCIdC0iWLCEM9GcmKrI=
+  dependencies:
+    arg "^4.1.0"
+    diff "^4.0.1"
+    make-error "^1.1.1"
+    source-map-support "^0.5.6"
+    yn "^3.0.0"
+
 ts-node@~7.0.0:
   version "7.0.1"
   resolved "https://registry.npm.taobao.org/ts-node/download/ts-node-7.0.1.tgz#9562dc2d1e6d248d24bc55f773e3f614337d9baf"
@@ -7804,6 +7851,13 @@ webpack-merge@4.2.1:
   dependencies:
     lodash "^4.17.5"
 
+webpack-merge@^4.2.1:
+  version "4.2.2"
+  resolved "https://registry.npm.taobao.org/webpack-merge/download/webpack-merge-4.2.2.tgz#a27c52ea783d1398afd2087f547d7b9d2f43634d"
+  integrity sha1-onxS6ng9E5iv0gh/VH17nS9DY00=
+  dependencies:
+    lodash "^4.17.15"
+
 webpack-sources@1.4.3, webpack-sources@^1.1.0, webpack-sources@^1.2.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1:
   version "1.4.3"
   resolved "https://registry.npm.taobao.org/webpack-sources/download/webpack-sources-1.4.3.tgz#eedd8ec0b928fbf1cbfe994e22d2d890f330a933"
@@ -8033,6 +8087,11 @@ yn@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/yn/download/yn-2.0.0.tgz#e5adabc8acf408f6385fc76495684c88e6af689a"
   integrity sha1-5a2ryKz0CPY4X8dklWhMiOavaJo=
+
+yn@^3.0.0:
+  version "3.1.1"
+  resolved "https://registry.npm.taobao.org/yn/download/yn-3.1.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyn%2Fdownload%2Fyn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
+  integrity sha1-HodAGgnXZ8HV6rJqbkwYUYLS61A=
 
 zone.js@~0.9.1:
   version "0.9.1"
