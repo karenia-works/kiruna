@@ -1,4 +1,4 @@
-export const backendConfig = {
+export const apiConfig = {
   endpoints: {
     account: {
       login: '/account/login',
