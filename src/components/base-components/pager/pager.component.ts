@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {articles} from '../../../articleAbstractList';
+import { articles } from '../../../articleAbstractList';
 import { PageChangedEvent } from 'ngx-bootstrap';
 @Component({
   selector: 'app-pager',
+  styleUrls: ['pager.component.styl'],
   templateUrl: './pager.component.html',
 })
 export class PagerComponent implements OnInit {
