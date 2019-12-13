@@ -1,0 +1,37 @@
+<div class="paginator">
+  <div
+    class="page first-page"
+    (click)="firstPageClick()"
+    *ngIf="hasFirst && showFirst"
+  >
+    {{ 1 }}
+  </div>
+  <div
+    class="page prev-page"
+    (click)="prevPageClick()"
+    *ngIf="prevText && hasFirst"
+  >
+    {{ prevText }}
+  </div>
+  <div
+    [ngClass]="{ page: true, cur: currentPage == page }"
+    *ngFor="let page of showedPages"
+    (click)="numberPageClick(page)"
+  >
+    {{ page }}
+  </div>
+  <div
+    class="page next-page"
+    (click)="nextPageClick()"
+    *ngIf="nextText && hasLast"
+  >
+    {{ nextText }}
+  </div>
+  <div
+    class="page last-page"
+    (click)="lastPageClick()"
+    *ngIf="hasLast && showLast"
+  >
+    {{ totalPages }}
+  </div>
+</div>

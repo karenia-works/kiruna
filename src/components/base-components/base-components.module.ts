@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { PagerComponent } from './pager/pager.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { FormsModule } from '@angular/forms';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     ArticleAbstractComponent,
     PagerComponent,
+    PaginatorComponent,
   ],
   imports: [CommonModule, RouterModule, PaginationModule.forRoot(), FormsModule],
   exports: [
@@ -24,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     ArticleAbstractComponent,
     PagerComponent,
+    PaginatorComponent,
   ],
 })
 export class BaseComponentsModule {}

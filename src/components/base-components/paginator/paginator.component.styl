@@ -1,0 +1,33 @@
+.paginator {
+  display: flex
+  flex-direction: row
+  margin: var(--theme-pad-03) calc(-1 * var(--theme-pad-01))
+}
+
+.page {
+  margin: var(--theme-pad-01) var(--theme-pad-01)
+  padding: var(--theme-pad-02) var(--theme-pad-03)
+  box-sizing: border-box
+  border: 2px solid transparent
+  transition: all 200ms ease-in-out
+
+  &:hover {
+    border: 2px solid var(--theme-accent)
+  }
+
+  &.cur {
+    color: var(--theme-base07)
+    font-weight: bold
+    background-color: var(--theme-accent)
+
+    &:hover {
+      border: 2px solid var(--theme-base07)
+    }
+  }
+}
+
+.first-page,
+.last-page {
+  color: var(--theme-accent)
+  font-weight: 500
+}
