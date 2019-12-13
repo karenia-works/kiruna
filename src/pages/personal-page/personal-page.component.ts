@@ -13,3 +13,8 @@ export class PersonalPageComponent implements OnInit {
   }
 
 }
+
+export class PersonalPageInfo {
+  title = 'Tour of Heroes';
+  myHero = 'Windstorm';
+}
