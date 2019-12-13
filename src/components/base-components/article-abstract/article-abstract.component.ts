@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-article-abstract',
@@ -23,8 +24,9 @@ export class ArticleAbstractComponent implements OnInit {
   ngOnInit() {}
 
   get articleInfo(): string {
-    return [this.articleType, this.releaseDate, this.authors]
-      .filter(val => val != undefined)
+
+    return [this.articleType, this.releaseDate.toLocaleDateString(), this.authors]
+      .filter(val => val !== undefined)
       .join(' | ');
   }
 }
