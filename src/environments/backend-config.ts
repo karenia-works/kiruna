@@ -1,8 +1,14 @@
 export const apiConfig = {
   endpoints: {
     account: {
-      login: '/account/login',
-      info: '/account/info/{id}',
+      login: '/api/account/login',
+      info: '/api/account/info/{id}',
+    },
+    professor: {
+      apply: {
+        add: '/api/professor/apply',
+        query: '/api/professor/apply/{id}',
+      },
     },
   },
 };
