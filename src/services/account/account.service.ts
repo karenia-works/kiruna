@@ -11,7 +11,9 @@ export class AccountService implements HttpInterceptor {
   /**
    *
    */
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+    this.loadLoginData();
+  }
 
   public loggedIn = false;
   loginResult?: LoginResult;
@@ -19,7 +21,6 @@ export class AccountService implements HttpInterceptor {
   /**
    * Intercepts any outgoing HTTP request toward backend and add access token to them
    * @param req Request
-   * @param next
    */
   intercept(
     req: import('@angular/common/http').HttpRequest<any>,
@@ -34,17 +35,35 @@ export class AccountService implements HttpInterceptor {
     return next.handle(req);
   }
 
+  saveLoginData() {
+    if (this.loggedIn) {
+      window.localStorage.setItem('login', JSON.stringify(this.loginResult));
+    }
+  }
+
+  loadLoginData() {
+    let login = window.localStorage.getItem('login');
+    if (login !== null) {
+      this.loginResult = JSON.parse(login);
+      this.loggedIn = true;
+    }
+  }
+
+  clearLoginData() {
+    window.localStorage.removeItem('login');
+  }
+
   login(username: string, password: string): Observable<LoginResult> {
     return new Observable<LoginResult>(sub => {
       const { next, complete, error } = sub;
-      let mult = this.httpClient.post<ApiResult<LoginResult>>(
+      let res = this.httpClient.post<ApiResult<LoginResult>>(
         apiConfig.endpoints.account.login,
         {
           username,
           password,
         }
       );
-      mult.subscribe({
+      res.subscribe({
         next: info => {
           this.loginResult = info.data;
           next(info.data);
@@ -60,6 +79,7 @@ export class AccountService implements HttpInterceptor {
   logout() {
     this.loggedIn = false;
     this.loginResult = undefined;
+    this.clearLoginData();
   }
 }
 
