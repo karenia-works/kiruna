@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.styl"],
+            "styles": ["src/styles.styl", "src/components/base-components/pager/pager.component.css"],
             "scripts": [],
             "customWebpackConfig": {
               "path": "./webpack.config.js",
@@ -68,7 +68,7 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "kiruna:build"
+            "browserTarget": "kiruna:build",
           },
           "configurations": {
             "production": {
