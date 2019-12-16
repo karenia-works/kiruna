@@ -8,6 +8,7 @@ import { MainpageModule } from 'src/pages/mainpage/mainpage.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterOutlet } from '@angular/router';
 import { SearchpageModule } from 'src/pages/searchpage/searchpage.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { SearchpageModule } from 'src/pages/searchpage/searchpage.module';
     MainpageModule,
     BrowserAnimationsModule,
     SearchpageModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
