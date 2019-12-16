@@ -7,6 +7,8 @@ import { ErrorPagesModule } from 'src/pages/error-pages/error-pages.module';
 import { NotFoundPageComponent } from 'src/pages/error-pages/not-found-page/not-found-page.component';
 import { PersonalPageComponent } from 'src/pages/personal-page/personal-page.component';
 import { PersonalPageModule } from 'src/pages/personal-page/personal-page.module';
+import { MyFavoritePageComponent } from 'src/pages/personal-page/my-favorite-page/my-favorite-page.component';
+import { MyFavoritePageModule } from 'src/pages/personal-page/my-favorite-page/my-favorite-page.module';
 
 const routes: Routes = [
   {
@@ -20,7 +22,16 @@ const routes: Routes = [
   {
     // Personal page
     path: 'me',
-    component: PersonalPageComponent,
+    children: [
+      {
+        path: '',
+        component: PersonalPageComponent,
+      },
+      {
+        path: 'favorite',
+        component: MyFavoritePageComponent,
+      },
+    ],
   },
   {
     // 404 page
@@ -30,7 +41,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), MainpageModule, ErrorPagesModule,PersonalPageModule],
+  imports: [
+    RouterModule.forRoot(routes),
+    MainpageModule,
+    ErrorPagesModule,
+    PersonalPageModule,
+    MyFavoritePageModule,
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
