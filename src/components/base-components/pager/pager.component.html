@@ -1,0 +1,33 @@
+<link
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<link
+  href="http://localhost:4200/src/components/base-components/pager/pager.component.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+<div>
+  <div *ngFor="let article of returnedArray">
+    <app-article-abstract
+      [title]="article.title"
+      [articleType]="article.articleType"
+      [abstract]="article.abstract"
+      [authors]="article.authors"
+      [releaseDate]="article.releaseDate"
+      [tags]="article.tags"
+      [refCount]="article.refCount"
+      [downloadCount]="article.downloadCount"
+      [hasFile]="article.hasFile"
+      [showFavorite]="article.showFavorite"
+    >
+    </app-article-abstract>
+  </div>
+
+  <app-paginator
+    [totalItems]="articles.length"
+    [itemsPerPage]="5"
+    [showBoundary]="true"
+    (pageChanged)="pageChanged($event)"
+  ></app-paginator>
+</div>
