@@ -9,6 +9,14 @@ import { PersonalPageComponent } from 'src/pages/personal-page/personal-page.com
 import { PersonalPageModule } from 'src/pages/personal-page/personal-page.module';
 import { MyFavoritePageComponent } from 'src/pages/personal-page/my-favorite-page/my-favorite-page.component';
 import { MyFavoritePageModule } from 'src/pages/personal-page/my-favorite-page/my-favorite-page.module';
+import { MyDownloadPageComponent } from 'src/pages/personal-page/my-download-page/my-download-page.component';
+import { MyDownloadPageModule } from 'src/pages/personal-page/my-download-page/my-download-page.module';
+import { MyFollowPageComponent } from 'src/pages/personal-page/my-follow-page/my-follow-page.component';
+import { MyFollowPageModule } from 'src/pages/personal-page/my-follow-page/my-follow-page.module';
+import { MySettingPageComponent } from 'src/pages/personal-page/my-setting-page/my-setting-page.component';
+import { MySettingPageModule } from 'src/pages/personal-page/my-setting-page/my-setting-page.module';
+import { MyPaymentPageComponent } from 'src/pages/personal-page/my-payment-page/my-payment-page.component';
+import { MyPaymentPageModule } from 'src/pages/personal-page/my-payment-page/my-payment-page.module';
 
 const routes: Routes = [
   {
@@ -31,6 +39,22 @@ const routes: Routes = [
         path: 'favorite',
         component: MyFavoritePageComponent,
       },
+      {
+        path: 'download',
+        component: MyDownloadPageComponent,
+      },
+      {
+        path: 'payment',
+        component: MyPaymentPageComponent,
+      },
+      {
+        path: 'setting',
+        component: MySettingPageComponent,
+      },
+      {
+        path: 'follow',
+        component: MyFollowPageComponent,
+      },
     ],
   },
   {
@@ -47,6 +71,10 @@ const routes: Routes = [
     ErrorPagesModule,
     PersonalPageModule,
     MyFavoritePageModule,
+    MyFollowPageModule,
+    MyDownloadPageModule,
+    MyPaymentPageModule,
+    MySettingPageModule,
   ],
   exports: [RouterModule],
 })
