@@ -3,6 +3,15 @@
     <h1 class="recent_title">
       我的关注
     </h1>
+
+    <div>
+
+      <app-paginator [totalItems]="follows.length" [itemsPerPage]="5" [showBoundary]="true"
+        (pageChanged)="pageChanged($event)">
+      </app-paginator>
+
+    </div>
+
   </div>
 
   <div class="right_part">
