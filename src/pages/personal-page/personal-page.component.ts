@@ -10,12 +10,22 @@ import { PageChangedEvent } from 'ngx-bootstrap';
 export class PersonalPageComponent implements OnInit {
   articles = articles;
   returnedArray;
+  name;
+  college;
+  downloadNum;
+  MoneyLeft;
+
 
   constructor() {
-    this.returnedArray = this.articles.slice(0, 3);
   }
 
   ngOnInit() {
+    this.returnedArray = this.articles.slice(0, 3);
+    this.name = 'Dio';
+    this.college = '北京航空航天大学';
+    this.downloadNum = '12';
+    this.MoneyLeft = '14.33';
+
   }
 
 }
