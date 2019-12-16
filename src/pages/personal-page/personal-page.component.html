@@ -39,73 +39,42 @@
           最近收藏
         </h1>
         <div class="recent_more">
-          <a href="http://www.w3school.com.cn">查看更多</a>
+          <a routerLink="favorite">查看更多</a>
         </div>
       </div>
 
-      <div class="recent_subject">
-        <app-article-abstract
-          title="基于脑机接口的单兵作战无人武器控制系统"
-          article-type="论文"
-          refCount="31"
-          downloadCount="256"
-          abstract="项目以稳态视觉诱发电位脑机接口技术为核心，在枪械上外挂刺激光源和LCD液晶显示器，利用士兵佩戴的无源干电极脑电传感器，
-        实时采集士兵的枕区脑电信号，根据士兵目光注视刺激光源的信号特征，准确识别士兵目光的意图，实现对应刺激光源所映射的按键功能，
-        进而实现对无人武器系统如无人机和无人车等的控制。无人设备可搭载摄像头或微型武器，实现战场情况的侦查或目标打击。"
-        ></app-article-abstract>
-        <br />
-        <app-article-abstract
-          title="基于脑机接口的单兵作战无人武器控制系统"
-          article-type="论文"
-          refCount="31"
-          downloadCount="256"
-          abstract="项目以稳态视觉诱发电位脑机接口技术为核心，在枪械上外挂刺激光源和LCD液晶显示器，利用士兵佩戴的无源干电极脑电传感器，
-        实时采集士兵的枕区脑电信号，根据士兵目光注视刺激光源的信号特征，准确识别士兵目光的意图，实现对应刺激光源所映射的按键功能，
-        进而实现对无人武器系统如无人机和无人车等的控制。无人设备可搭载摄像头或微型武器，实现战场情况的侦查或目标打击。"
-        ></app-article-abstract>
-        <br />
-        <app-article-abstract
-          title="基于脑机接口的单兵作战无人武器控制系统"
-          article-type="论文"
-          refCount="31"
-          downloadCount="256"
-          abstract="项目以稳态视觉诱发电位脑机接口技术为核心，在枪械上外挂刺激光源和LCD液晶显示器，利用士兵佩戴的无源干电极脑电传感器，
-        实时采集士兵的枕区脑电信号，根据士兵目光注视刺激光源的信号特征，准确识别士兵目光的意图，实现对应刺激光源所映射的按键功能，
-        进而实现对无人武器系统如无人机和无人车等的控制。无人设备可搭载摄像头或微型武器，实现战场情况的侦查或目标打击。"
-        ></app-article-abstract>
-        <br />
-        <app-article-abstract
-          title="基于脑机接口的单兵作战无人武器控制系统"
-          article-type="论文"
-          refCount="31"
-          downloadCount="256"
-          abstract="项目以稳态视觉诱发电位脑机接口技术为核心，在枪械上外挂刺激光源和LCD液晶显示器，利用士兵佩戴的无源干电极脑电传感器，
-        实时采集士兵的枕区脑电信号，根据士兵目光注视刺激光源的信号特征，准确识别士兵目光的意图，实现对应刺激光源所映射的按键功能，
-        进而实现对无人武器系统如无人机和无人车等的控制。无人设备可搭载摄像头或微型武器，实现战场情况的侦查或目标打击。"
-        ></app-article-abstract>
-      </div>
-    </div>
-  </div>
+      <div class="recent_subject" *ngFor="let article of returnedArray">
 
-  <div class="func_part">
-    <HR class="line" id="okk" SIZE="2" color="#27a881" />
-    <div class="func_t">
-      <a routerLink="." class="func_t">个人中心</a>
-    </div>
-    <div class="func_h">
-      <a routerLink="favorite">我的收藏</a>
-    </div>
-    <div class="func_h">
-        <a routerLink="download">我的下载</a>
-    </div>
-    <div class="func_h">
-      <a routerLink="follow">我的关注</a>
-    </div>
-    <div class="func_h">
-      <a routerLink="setting">个人设置</a>
-    </div>
-    <div class="func_h">
-      <a routerLink="payment">财务管理</a>
-    </div>
+        <app-article-abstract [title]="article.title" [articleType]="article.articleType" [abstract]="article.abstract"
+          [authors]="article.authors" [releaseDate]="article.releaseDate" [tags]="article.tags"
+          [refCount]="article.refCount" [downloadCount]="article.downloadCount" [hasFile]="article.hasFile"
+          [showFavorite]="article.showFavorite">
+        </app-article-abstract>
+
+      </div>
+
   </div>
+</div>
+
+<div class="func_part">
+  <HR class="line" id="okk" SIZE="2" color="#27a881" />
+  <div class="func_t">
+    <a routerLink="." class="func_t">个人中心</a>
+  </div>
+  <div class="func_h">
+    <a routerLink="favorite">我的收藏</a>
+  </div>
+  <div class="func_h">
+    <a routerLink="download">我的下载</a>
+  </div>
+  <div class="func_h">
+    <a routerLink="follow">我的关注</a>
+  </div>
+  <div class="func_h">
+    <a routerLink="setting">个人设置</a>
+  </div>
+  <div class="func_h">
+    <a routerLink="payment">财务管理</a>
+  </div>
+</div>
 </div>

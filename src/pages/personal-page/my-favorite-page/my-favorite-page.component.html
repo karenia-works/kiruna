@@ -5,55 +5,17 @@
     </h1>
 
     <div class="recent_subject">
-      <app-article-abstract
-        title="基于脑机接口的单兵作战无人武器控制系统"
-        article-type="论文"
-        refCount="31"
-        downloadCount="256"
-        abstract="项目以稳态视觉诱发电位脑机接口技术为核心，在枪械上外挂刺激光源和LCD液晶显示器，利用士兵佩戴的无源干电极脑电传感器，
-    实时采集士兵的枕区脑电信号，根据士兵目光注视刺激光源的信号特征，准确识别士兵目光的意图，实现对应刺激光源所映射的按键功能，
-    进而实现对无人武器系统如无人机和无人车等的控制。无人设备可搭载摄像头或微型武器，实现战场情况的侦查或目标打击。"
-      ></app-article-abstract>
-      <br />
-      <app-article-abstract
-        title="基于脑机接口的单兵作战无人武器控制系统"
-        article-type="论文"
-        refCount="31"
-        downloadCount="256"
-        abstract="项目以稳态视觉诱发电位脑机接口技术为核心，在枪械上外挂刺激光源和LCD液晶显示器，利用士兵佩戴的无源干电极脑电传感器，
-    实时采集士兵的枕区脑电信号，根据士兵目光注视刺激光源的信号特征，准确识别士兵目光的意图，实现对应刺激光源所映射的按键功能，
-    进而实现对无人武器系统如无人机和无人车等的控制。无人设备可搭载摄像头或微型武器，实现战场情况的侦查或目标打击。"
-      ></app-article-abstract>
-      <br />
-      <app-article-abstract
-        title="基于脑机接口的单兵作战无人武器控制系统"
-        article-type="论文"
-        refCount="31"
-        downloadCount="256"
-        abstract="项目以稳态视觉诱发电位脑机接口技术为核心，在枪械上外挂刺激光源和LCD液晶显示器，利用士兵佩戴的无源干电极脑电传感器，
-    实时采集士兵的枕区脑电信号，根据士兵目光注视刺激光源的信号特征，准确识别士兵目光的意图，实现对应刺激光源所映射的按键功能，
-    进而实现对无人武器系统如无人机和无人车等的控制。无人设备可搭载摄像头或微型武器，实现战场情况的侦查或目标打击。"
-      ></app-article-abstract>
-      <br />
-      <app-article-abstract
-        title="基于脑机接口的单兵作战无人武器控制系统"
-        article-type="论文"
-        refCount="31"
-        downloadCount="256"
-        abstract="项目以稳态视觉诱发电位脑机接口技术为核心，在枪械上外挂刺激光源和LCD液晶显示器，利用士兵佩戴的无源干电极脑电传感器，
-    实时采集士兵的枕区脑电信号，根据士兵目光注视刺激光源的信号特征，准确识别士兵目光的意图，实现对应刺激光源所映射的按键功能，
-    进而实现对无人武器系统如无人机和无人车等的控制。无人设备可搭载摄像头或微型武器，实现战场情况的侦查或目标打击。"
-      ></app-article-abstract>
-      <br />
-      <app-article-abstract
-        title="基于脑机接口的单兵作战无人武器控制系统"
-        article-type="论文"
-        refCount="31"
-        downloadCount="256"
-        abstract="项目以稳态视觉诱发电位脑机接口技术为核心，在枪械上外挂刺激光源和LCD液晶显示器，利用士兵佩戴的无源干电极脑电传感器，
-    实时采集士兵的枕区脑电信号，根据士兵目光注视刺激光源的信号特征，准确识别士兵目光的意图，实现对应刺激光源所映射的按键功能，
-    进而实现对无人武器系统如无人机和无人车等的控制。无人设备可搭载摄像头或微型武器，实现战场情况的侦查或目标打击。"
-      ></app-article-abstract>
+      <div *ngFor="let article of returnedArray">
+        <app-article-abstract [title]="article.title" [articleType]="article.articleType" [abstract]="article.abstract"
+          [authors]="article.authors" [releaseDate]="article.releaseDate" [tags]="article.tags"
+          [refCount]="article.refCount" [downloadCount]="article.downloadCount" [hasFile]="article.hasFile"
+          [showFavorite]="article.showFavorite">
+        </app-article-abstract>
+      </div>
+
+      <app-paginator [totalItems]="articles.length" [itemsPerPage]="5" [showBoundary]="true"
+        (pageChanged)="pageChanged($event)"></app-paginator>
+
     </div>
   </div>
   <div class="right_part">
@@ -65,7 +27,7 @@
       <a routerLink="." class="func_t">我的收藏</a>
     </div>
     <div class="func_h">
-        <a routerLink="../download">我的下载</a>
+      <a routerLink="../download">我的下载</a>
     </div>
     <div class="func_h">
       <a routerLink="../follow">我的关注</a>

@@ -3,6 +3,20 @@
     <h1 class="recent_title">
       我的下载
     </h1>
+    <div>
+      <div *ngFor="let article of returnedArray">
+        <app-article-abstract [title]="article.title" [articleType]="article.articleType" [abstract]="article.abstract"
+          [authors]="article.authors" [releaseDate]="article.releaseDate" [tags]="article.tags"
+          [refCount]="article.refCount" [downloadCount]="article.downloadCount" [hasFile]="article.hasFile"
+          [showFavorite]="article.showFavorite">
+        </app-article-abstract>
+      </div>
+
+      <app-paginator [totalItems]="articles.length" [itemsPerPage]="5" [showBoundary]="true"
+        (pageChanged)="pageChanged($event)"></app-paginator>
+    </div>
+
+
   </div>
 
   <div class="right_part">

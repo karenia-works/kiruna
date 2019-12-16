@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { articles } from '../../articleAbstractList';
+import { PageChangedEvent } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-personal-page',
@@ -6,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personal-page.component.styl']
 })
 export class PersonalPageComponent implements OnInit {
+  articles = articles;
+  returnedArray;
 
-  constructor() { }
+  constructor() {
+    this.returnedArray = this.articles.slice(0, 3);
+  }
 
   ngOnInit() {
   }
