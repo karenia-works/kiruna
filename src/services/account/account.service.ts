@@ -5,6 +5,7 @@ import 'rxjs/operators';
 import { apiConfig } from 'src/environments/backend-config';
 import { multicast } from 'rxjs/operators';
 import { userInfo } from 'os';
+import { LoginResult } from 'src/models/account';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService implements HttpInterceptor {

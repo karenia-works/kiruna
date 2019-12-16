@@ -1,11 +1,11 @@
-interface LoginResult {
+export interface LoginResult {
   access_token: string;
   expires_in: number;
   token_type: string;
   scope: string;
 }
 
-interface TokenContext {
+export interface TokenContext {
   client_id: string;
   client_secret: string;
   grant_type:
