@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { articles } from '../../articleAbstractList';
-import { PageChangedEvent } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-personal-page',
   templateUrl: './personal-page.component.html',
-  styleUrls: ['./personal-page.component.styl']
+  styleUrls: ['./personal-page.component.styl'],
 })
 export class PersonalPageComponent implements OnInit {
   articles = articles;
@@ -15,9 +14,7 @@ export class PersonalPageComponent implements OnInit {
   downloadNum;
   MoneyLeft;
 
-
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
     this.returnedArray = this.articles.slice(0, 3);
@@ -25,9 +22,7 @@ export class PersonalPageComponent implements OnInit {
     this.college = '北京航空航天大学';
     this.downloadNum = '12';
     this.MoneyLeft = '14.33';
-
   }
-
 }
 
 export class PersonalPageInfo {

@@ -9,9 +9,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterOutlet } from '@angular/router';
 import { SearchpageModule } from 'src/pages/searchpage/searchpage.module';
 import { HttpClientModule } from '@angular/common/http';
+import {LoginPageComponent} from 'src/pages/login-page/login-page.component';
+import {RegisterPageComponent} from 'src/pages/register-page/register-page.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginPageComponent, RegisterPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

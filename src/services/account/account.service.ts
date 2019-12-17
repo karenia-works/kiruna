@@ -5,7 +5,9 @@ import 'rxjs/operators';
 import { apiConfig } from 'src/environments/backend-config';
 import { multicast } from 'rxjs/operators';
 import { userInfo } from 'os';
-import { LoginResult } from 'src/models/account';
+import { LoginResult, TokenContext } from 'src/models/account';
+import { environment } from 'src/environments/environment';
+import { ApiResult } from 'src/models/result';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService implements HttpInterceptor {
@@ -57,12 +59,17 @@ export class AccountService implements HttpInterceptor {
   login(username: string, password: string): Observable<LoginResult> {
     return new Observable<LoginResult>(sub => {
       const { next, complete, error } = sub;
+      let ctx: TokenContext = {
+        client_id: 'client',
+        client_secret: 'client',
+        grant_type: 'password',
+        username,
+        password,
+        scope: 'api',
+      };
       let res = this.httpClient.post<ApiResult<LoginResult>>(
-        apiConfig.endpoints.account.login,
-        {
-          username,
-          password,
-        }
+        environment.endpoint + apiConfig.endpoints.account.login,
+        ctx
       );
       res.subscribe({
         next: info => {

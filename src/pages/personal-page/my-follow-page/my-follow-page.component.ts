@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { follows } from '../../../followList';
-import { PageChangedEvent } from 'ngx-bootstrap';
+import { PageChangedEvent } from 'src/components/base-components/paginator/paginator.component';
 
 @Component({
   selector: 'app-my-follow-page',
   templateUrl: './my-follow-page.component.html',
-  styleUrls: ['./my-follow-page.component.styl']
+  styleUrls: ['./my-follow-page.component.styl'],
 })
 export class MyFollowPageComponent implements OnInit {
   follows = follows;
   returnedArray;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
     this.returnedArray = this.follows.slice(0, 5);

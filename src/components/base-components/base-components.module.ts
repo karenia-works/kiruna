@@ -6,7 +6,6 @@ import { FooterComponent } from './footer/footer.component';
 import { ArticleAbstractComponent } from './article-abstract/article-abstract.component';
 import { RouterModule } from '@angular/router';
 import { PagerComponent } from './pager/pager.component';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { FormsModule } from '@angular/forms';
 import { PaginatorComponent } from './paginator/paginator.component';
 
@@ -19,7 +18,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
     PagerComponent,
     PaginatorComponent,
   ],
-  imports: [CommonModule, RouterModule, PaginationModule.forRoot(), FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   exports: [
     NavbarComponent,
     SearchbarComponent,

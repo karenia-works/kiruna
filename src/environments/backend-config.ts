@@ -1,8 +1,8 @@
 export const apiConfig = {
   endpoints: {
     account: {
-      login: '/api/account/login',
-      info: '/api/account/info/{id}',
+      login: '/connect/token',
+      info: '/api/account/{id}',
     },
     professor: {
       apply: {

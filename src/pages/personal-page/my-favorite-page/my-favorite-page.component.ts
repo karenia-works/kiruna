@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { articles } from '../../../articleAbstractList';
-import { PageChangedEvent } from 'ngx-bootstrap';
+import { PageChangedEvent } from 'src/components/base-components/paginator/paginator.component';
 
 @Component({
   selector: 'app-my-favorite-page',
   templateUrl: './my-favorite-page.component.html',
-  styleUrls: ['./my-favorite-page.component.styl']
+  styleUrls: ['./my-favorite-page.component.styl'],
 })
 export class MyFavoritePageComponent implements OnInit {
   articles = articles;
   returnedArray;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
     this.returnedArray = this.articles.slice(0, 5);
