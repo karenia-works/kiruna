@@ -22,3 +22,24 @@ export interface TokenContext {
   refresh_token?: string;
   device_code?: string;
 }
+
+export interface UserAccount {
+  userId: number;
+  email: string;
+  userName: string;
+  balance: bigint;
+}
+
+export interface Follower {
+  followerId: number;
+  follower: UserAccount;
+  followingId: number;
+  following: UserAccount;
+  followDate: Date;
+}
+
+export interface Purchase {
+  purchaseId: number;
+  userId: number;
+  paperId: number;
+}
