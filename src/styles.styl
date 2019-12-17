@@ -179,17 +179,17 @@ label {
 
 h1 {
   font-size: var(--theme-size-h1)
-  font-weight: 300
+  font-weight: 400
 }
 
 h2 {
   font-size: var(--theme-size-h2)
-  font-weight: 400
+  font-weight: 500
 }
 
 h3 {
   font-size: var(--theme-size-h3)
-  font-weight: 400
+  font-weight: 500
 }
 
 h4 {
@@ -202,11 +202,21 @@ h4 {
   font-weight: 300
 }
 
+.btn-ghost,
+.link,
 a {
   color: var(--theme-accent)
   font-style: inherit
   font-weight: inherit
   text-decoration: inherit
+  display: flex
+  flex-direction: row
+  align-items: baseline
+}
+
+.btn-ghost {
+  margin-left: var(--theme-pad-02)
+  margin-right: var(--theme-pad-02)
 }
 
 textbox-default-background-color = var(--theme-base07)
@@ -277,6 +287,17 @@ btn-default-highlight-text-color = var(--theme-base07)
     &:hover {
       color: var(--btn-highlight-text-color, var(--theme-base00))!important
       background-color: var(--btn-highlight-color, var(--theme-accent))!important
+    }
+  }
+
+  &.-btn {
+    background-color: var(--btn-background-color, var(--theme-base06))
+    color: var(--btn-text-color, var(--theme-accent))
+    border-color: var(--btn-border-color, var(--theme-accent))
+
+    &:hover {
+      color: var(--btn-highlight-text-color, var(--theme-base00))
+      background-color: var(--btn-highlight-color, var(--theme-accent))
     }
   }
 }
