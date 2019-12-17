@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-setting-page.component.styl']
 })
 export class MySettingPageComponent implements OnInit {
+  name;
+  changedName;
 
   constructor() { }
 
   ngOnInit() {
+    this.name = 'Dio';
+    this.changedName = '';
   }
+
+
 
 }
