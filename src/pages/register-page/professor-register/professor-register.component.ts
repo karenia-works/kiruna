@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./professor-register.component.styl']
 })
 export class ProfessorRegisterComponent implements OnInit {
+  name;
+  user_id;
+  institution;
+  password;
+  mail;
+  phonenum;
 
   constructor() { }
 
