@@ -38,6 +38,10 @@ const routes: Routes = [
     component: RegisterPageComponent,
   },
   {
+    path: 'pro_register',
+    component: RegisterPageComponent,
+  },
+  {
     // Personal page
     path: 'me',
     children: [
