@@ -17,6 +17,8 @@ import { MySettingPageComponent } from 'src/pages/personal-page/my-setting-page/
 import { MySettingPageModule } from 'src/pages/personal-page/my-setting-page/my-setting-page.module';
 import { MyPaymentPageComponent } from 'src/pages/personal-page/my-payment-page/my-payment-page.component';
 import { MyPaymentPageModule } from 'src/pages/personal-page/my-payment-page/my-payment-page.module';
+import {LoginPageComponent} from 'src/pages/login-page/login-page.component';
+import {RegisterPageComponent} from 'src/pages/register-page/register-page.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 's',
     component: SearchpageComponent,
+  },
+  {
+    path: 'login',
+    component: LoginPageComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterPageComponent,
   },
   {
     // Personal page
