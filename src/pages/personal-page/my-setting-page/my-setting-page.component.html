@@ -7,12 +7,15 @@
 
     <h4>当前用户名：{{ name }}</h4>
     <h4>修改用户名：{{changedName}}</h4>
+    <div class="input_btn">
     <input
       class="search-box"
       placeholder="输入要修改的用户名"
-      ng-model="changedName"
+      [value]="changedName"
+      (input)="changedName = $event.target.value"
     />
-
+    <button (click)="onClickMe()" class="btn search-btn ">确认修改</button>
+    </div>
   </div>
 
   <div class="right_part">
