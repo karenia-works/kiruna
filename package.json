@@ -23,6 +23,7 @@
     "postcss-color-function": "^4.1.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "yarn": "^1.21.1",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="left">
+    <h1 class="title">
+      人脉
+    </h1>
+    <div>
+      <div *ngFor="let connection of returnedArray" class="model">
+        <div class="pic">
+          <img class="image" [src]="connection.pic_url" />
+        </div>
+        <div class="label">
+          <div class="name">{{ connection.name }}</div>
+          <div class="from">{{ connection.from }}</div>
+        </div>
+      </div>
+      <app-paginator [totalItems]="connections.length" [itemsPerPage]="5" [showBoundary]="true" (pageChanged)="pageChanged($event)" class="pager">
+      </app-paginator>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="right-wrapper">
+      <div class="line"></div>
+      <div class="summary">
+        <div class="toc-fat">
+          <a routerLink=".." class="func_h">专家简介</a>
+        </div>
+        <div class="toc">
+          <a routerLink="../article" class="func_h">文章 ({{articleNum}})</a>
+        </div>
+        <div class="toc">
+          <a routerLink="." class="func_t">人脉</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

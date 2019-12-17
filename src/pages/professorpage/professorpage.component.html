@@ -1,11 +1,14 @@
-<div class="professorpage-banner inverted-color-theme" @banner-trigger></div>
 <div class="top-rectangle"></div>
 <div class="container">
   <div class="left">
     <div class="profile">
-      <div class="photo"></div>
+      <div class="photo">
+        <img class="profile-photo" src="{{photo}}">
+      </div>
       <div class="name-title">
-        <div class="jumbotron">闫志全</div>
+        <div class="jumbotron">
+          {{name}}
+        </div>
         <div class="actions">
           <div class="btn-ghost">
             <div class="symbol-word">关注</div>
@@ -15,37 +18,47 @@
           </div>
         </div>
       </div>
-      <div class="unit">北京航空航天大学</div>
+      <div class="unit">
+        {{unit}}
+      </div>
       <div class="description">
-        化学博士。现在在主攻社会行为学和生物学，以及化学物质在其中的作用。
+        {{description}}
       </div>
       <div class="personal-info">
         <div class="row">
           <div class="key">个人网站</div>
-          <div class="val">http://yan-zhiquan.com</div>
+          <div class="val">
+            <a href="{{personalSite}}">
+              {{personalSite}}
+            </a>
+          </div>
         </div>
         <div class="row">
           <div class="key">微博</div>
-          <div class="val">@你家猫一米八</div>
+          <div class="val">
+            <a href="{{weiboSite}}">
+              {{weiboName}}
+            </a>
+          </div>
         </div>
       </div>
       <div class="tag-container">
-        <div class="tag">天然产物的有机合成</div>
-        <div class="tag">社会行为学</div>
-        <div class="tag">生物科学</div>
+        <div class="tag" *ngFor="let tag of returnedTagsArray">
+          {{tag.name}}
+        </div>
       </div>
       <div class="data-list">
         <div class="data">
           <div class="unit">发文</div>
-          <div class="number">30</div>
+          <div class="number">{{articleNum}}</div>
         </div>
         <div class="data">
           <div class="unit">引用</div>
-          <div class="number">115</div>
+          <div class="number">{{quotedNum}}</div>
         </div>
         <div class="data">
           <div class="unit">下载</div>
-          <div class="number">65536</div>
+          <div class="number">{{downloadedNum}}</div>
         </div>
       </div>
     </div>
@@ -58,38 +71,13 @@
             文章
           </h1>
           <div class="link ghost-btn">
-            查看全部文章 (30)
+            <a routerLink="article">查看全部文章 ({{articleNum}})</a>
           </div>
         </div>
-        <div class="abstract"></div>
-      </div>
-      <!-- Patents -->
-      <div class="result-block patents">
-        <div class="title-block">
-          <h1 class="type">
-            专利
-          </h1>
-          <div class="link ghost-btn">
-            查看全部专利 (0)
-          </div>
-        </div>
-        <div class="patent">这位专家似乎还没发过专利。</div>
-      </div>
-      <!-- Projects -->
-      <div class="result-block projects">
-        <div class="title-block">
-          <h1 class="type">
-            项目
-          </h1>
-          <div class="link ghost-btn">
-            查看所有项目 (12)
-          </div>
-        </div>
-        <div class="abstract">
-          <div class="title">二甲双胍的续命作用</div>
-          <div class="context">
-            二甲双胍的降糖作用是毋庸置疑的。但是，最近也有证据表明二甲双胍也有抵抗衰老、甚至修复细胞的功能。本项目将以蛙类为载体探索二甲双胍的续命作用。
-          </div>
+        <div class="abstract" *ngFor="let article of returnedArticlesArray">
+          <app-article-abstract [title]="article.title" [articleType]="article.articleType" [abstract]="article.abstract" [authors]="article.authors" [releaseDate]="article.releaseDate" [tags]="article.tags" [refCount]="article.refCount" [downloadCount]="article.downloadCount"
+                                [hasFile]="article.hasFile" [showFavorite]="article.showFavorite">
+          </app-article-abstract>
         </div>
       </div>
       <!-- Contacts -->
@@ -99,15 +87,39 @@
             人脉
           </h1>
           <div class="link ghost-btn">
-            查看所有人脉信息
+            <a routerLink="connection">查看所有人脉信息</a>
           </div>
         </div>
         <div class="title-block">
-          <div class="quote">
-            他常引用
+          <div class="connection">
+            <div class="quote">
+              他常引用
+            </div>
+            <!-- component好了会换成component的，先放着占位 -->
+            <div *ngFor="let quote of returnedQuotesArray" class="avatar">
+              <div class="pic">
+                <img class="image" [src]="quote.pic_url" />
+              </div>
+              <div class="label">
+                <div class="name">{{ quote.name }}</div>
+                <div class="from">{{ quote.from }}</div>
+              </div>
+            </div>
           </div>
-          <div class="quote">
-            常引用他
+          <div class="connection">
+            <div class="quote">
+              常引用他
+            </div>
+            <!-- component好了会换成component的，先放着占位 -->
+            <div *ngFor="let quoted of returnedQuotedsArray" class="avatar">
+              <div class="pic">
+                <img class="image" [src]="quoted.pic_url" />
+              </div>
+              <div class="label">
+                <div class="name">{{ quoted.name }}</div>
+                <div class="from">{{ quoted.from }}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -117,12 +129,15 @@
     <div class="right-wrapper">
       <div class="line"></div>
       <div class="summary">
-        <div class="toc-fat">专家简介</div>
-        <div class="toc">文章 (30)</div>
-        <div class="toc">专利 (0)</div>
-        <div class="toc">项目 (12)</div>
-        <div class="toc">人脉</div>
-        <div class="toc">联系</div>
+        <div class="toc-fat">
+          <a routerLink="." class="func_t">专家简介</a>
+        </div>
+        <div class="toc">
+          <a routerLink="article" class="func_h">文章 ({{articleNum}})</a>
+        </div>
+        <div class="toc">
+          <a routerLink="connection" class="func_h">人脉</a>
+        </div>
       </div>
     </div>
   </div>
