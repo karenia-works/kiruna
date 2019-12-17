@@ -4,6 +4,15 @@
     <h1 class="recent_title">
       个人设置
     </h1>
+
+    <h4>当前用户名：{{ name }}</h4>
+    <h4>修改用户名：{{changedName}}</h4>
+    <input
+      class="search-box"
+      placeholder="输入要修改的用户名"
+      ng-model="changedName"
+    />
+
   </div>
 
   <div class="right_part">
@@ -21,7 +30,7 @@
       <a routerLink="../follow">我的关注</a>
     </div>
     <div class="func_t">
-      <a routerLink="."  class="func_t">个人设置</a>
+      <a routerLink="." class="func_t">个人设置</a>
     </div>
     <div class="func_h">
       <a routerLink="../payment">财务管理</a>
