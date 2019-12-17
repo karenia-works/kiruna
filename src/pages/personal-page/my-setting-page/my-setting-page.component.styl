@@ -1,0 +1,44 @@
+.container {
+    display: flex
+    flex-direction: row
+}
+
+.left_part {
+    lost-column: 4 / 5
+
+    .search-box {
+        display: flex
+        padding: var(--theme-pad-03) var(--theme-pad-03)
+        color: var(--searchbar-text-color, searchbar-default-text-color)
+        background-color: transparent
+        font-size: inherit
+        border-style: solid
+        border-width: 2px
+        border-color: #27a881
+        flex-grow: 1
+
+        &::placeholder {
+            color: var(--palette-base04)
+        }
+    }
+}
+
+.right_part {
+    lost-column: 1 / 5
+    position: sticky
+    top: var(--theme-pad-05)
+
+    .line {
+        width = 100%
+    }
+
+    .func_t {
+        color: var(--palette-base05)
+        margin-top: 5px
+    }
+
+    .func_h {
+        color: var(--palette-base03)
+        margin-top: 5px
+    }
+}

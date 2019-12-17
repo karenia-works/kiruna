@@ -2,6 +2,8 @@
 @import 'styles/container'
 @import 'styles/colors'
 
+@lost gutter 24px // ..
+@lost flexbox flex // ..
 default-font = 'Sarasa UI SC', 'Noto Sans', 'San Fransisco', 'Segoe UI', 'Noto Sans CJK SC', 'Noto Sans SC', 'Source Han Sans SC', 'Microsoft Yahei UI', sans-serif
 
 html {
@@ -257,23 +259,35 @@ btn-default-highlight-color = var(--theme-accent)
 btn-default-highlight-text-color = var(--theme-base07)
 
 .btn {
-  display: flex
-  flex-direction: row
-  align-items: center
-  padding: var(--theme-pad-02) var(--theme-pad-03)
-  background-color: var(--btn-background-color, btn-default-background-color)
-  color: var(--btn-text-color, btn-default-text-color)
-  border-style: solid
-  border-width: 2px
-  border-color: var(--btn-border-color, btn-default-border-color)
-  font-family: inherit
-  font-weight: bold
-  font-size: var(--theme-size-base)
-  transition: all 150ms ease-in-out
+  display: flex!important
+  flex-direction: row!important
+  align-items: center!important
+  padding: var(--theme-pad-02) var(--theme-pad-03)!important
+  background-color: var(--btn-background-color, btn-default-background-color)!important
+  color: var(--btn-text-color, btn-default-text-color)!important
+  border-style: solid!important
+  border-width: 2px!important
+  border-color: var(--btn-border-color, btn-default-border-color)!important
+  border-radius: 0px!important
+  font-family: inherit!important
+  font-weight: boldv
+  font-size: var(--theme-size-base)!important
+  transition: all 150ms ease-in-out!important
 
   &:hover {
-    color: var(--btn-highlight-text-color, btn-default-highlight-text-color)
-    background-color: var(--btn-highlight-color, btn-default-highlight-color)
+    color: var(--btn-highlight-text-color, btn-default-highlight-text-color)!important
+    background-color: var(--btn-highlight-color, btn-default-highlight-color)!important
+  }
+
+  &.-btn {
+    background-color: var(--btn-background-color, var(--theme-base06))!important
+    color: var(--btn-text-color, var(--theme-accent))!important
+    border-color: var(--btn-border-color, var(--theme-accent))!important
+
+    &:hover {
+      color: var(--btn-highlight-text-color, var(--theme-base00))!important
+      background-color: var(--btn-highlight-color, var(--theme-accent))!important
+    }
   }
 
   &.-btn {
