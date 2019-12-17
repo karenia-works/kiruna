@@ -1,0 +1,276 @@
+@lost flexbox flex
+//
+.professorpage-banner {
+}
+
+.container {
+  display: flex
+  flex-direction: row
+}
+
+.top-rectangle {
+  position: relative
+  margin-top: var(--theme-pad-01)
+  background-color: var(--theme-base06)
+  height: 30vh
+  min-height: 250px
+  width: 100%
+}
+
+.left {
+  lost-column: 2 / 3
+  margin-top: -15vh
+  display: flex
+  flex-direction: column
+  align-items: stretch
+}
+
+.profile {
+  display: flex
+  flex-direction: column
+  align-items: stretch
+}
+
+.photo {
+  // 这里后面拿数据的时候改成照片就行
+  background-color: grey
+  z-index: 200
+  border-bottom-width: var(--theme-pad-02)
+  border-bottom-style: solid
+  height: 20vh
+  width: 20vh
+  border-bottom-color: var(--theme-base04)
+}
+
+.name-title {
+  display: flex
+  flex-direction: row
+  align-items: baseline
+  margin-top: var(--theme-pad-06)
+}
+
+.actions {
+  margin-left: var(--theme-pad-04)
+  display: flex
+  flex-direction: row
+  align-items: baseline
+}
+
+.unit {
+  font-family: Sarasa Gothic SC
+  font-style: normal
+  font-weight: bold
+  font-size: var(--theme-size-larger)
+  display: flex
+  align-items: flex-end
+  color: var(--theme-base03)
+  width: 100%
+}
+
+.description {
+  font-family: Sarasa Gothic SC
+  font-style: normal
+  font-weight: normal
+  margin: var(--theme-pad-02) 0
+}
+
+.site {
+  width: 100%
+  padding-bottom: var(--theme-pad-02)
+  position: relative
+}
+
+.tag-container {
+  padding-top: var(--theme-pad-02)
+}
+
+.data-list {
+  display: flex
+}
+
+.data {
+  lost-column: 1 / 4
+  padding-top: var(--theme-pad-04)
+  margin-right: var(--theme-pad-02)
+}
+
+.number {
+  font-family: Iosevka
+  font-style: normal
+  font-weight: 300
+  font-size: var(--theme-size-h1)
+  display: flex
+  align-items: flex-end
+  font-feature-settings: 'calt' off
+  color: var(--theme-base00)
+}
+
+.personal-info {
+  display: flex
+  flex-direction: column
+  margin: var(--theme-pad-02) 0
+
+  .row {
+    display: flex
+    flex-direction: row
+    margin-top: var(--theme-pad-01)
+
+    .key {
+      lost-column: 1 / 6
+    }
+
+    .val {
+      lost-column: 5 / 6
+    }
+  }
+}
+
+.left-context {
+  width: var(--theme-pad-07)
+  font-family: Sarasa Gothic SC
+  font-style: normal
+  font-weight: normal
+  font-size: var(--theme-size-base)
+  font-feature-settings: 'case' on
+  color: var(--theme-base02)
+  float: left
+}
+
+.link {
+  font-family: Sarasa Gothic SC
+  font-style: normal
+  font-weight: normal
+  font-size: var(--theme-size-base)
+  color: var(--theme-accent)
+}
+
+.result-block {
+  display: flex
+  flex-direction: column
+  margin: var(--theme-pad-03) 0
+}
+
+.title-block {
+  display: flex
+  flex-direction: row
+  align-items: baseline
+  margin: var(--theme-pad-02) 0
+  justify-content: space-between
+
+  h1 {
+    display: block
+    margin: 0
+  }
+}
+
+.abstract {
+  width: 100%
+  position: relative
+  padding-bottom: var(--theme-pad-03)
+}
+
+.title {
+  font-family: Sarasa Gothic SC
+  font-size: var(--theme-size-larger)
+  padding-top: var(--theme-pad-02)
+  padding-bottom: var(--theme-pad-02)
+}
+
+.symbol-list {
+  display: flex
+  align-items: center
+}
+
+.symbol-abstract {
+  margin: var(--theme-pad-01) var(--theme-pad-01)
+}
+
+.symbol-number {
+  font-family: Iosevka
+  font-size: var(--theme-size-base)
+  margin-right: var(--theme-pad-06)
+  display: flex
+  align-items: center
+}
+
+.info {
+  font-family: Sarasa Gothic SC
+  font-style: normal
+  font-weight: bold
+  font-size: var(--theme-size-base)
+  color: var(--theme-base03)
+  padding-top: var(--theme-pad-01)
+}
+
+.context {
+  padding-top: var(--theme-pad-02)
+  font-family: Sarasa Gothic SC
+  font-style: normal
+  font-weight: normal
+  font-size: var(--theme-size-base)
+  font-feature-settings: 'case' on
+  color: var(--theme-base02)
+}
+
+.patent {
+  padding-top: var(--theme-pad-02)
+  font-family: Sarasa Gothic SC
+  font-style: normal
+  font-weight: normal
+  font-size: var(--theme-size-base)
+  font-feature-settings: 'case' on
+  color: var(--theme-base03)
+  padding-bottom: var(--theme-pad-03)
+}
+
+.quote {
+  font-family: Sarasa Gothic SC
+  width: 50%
+  font-size: var(--theme-size-larger)
+}
+
+.right {
+  lost-column: 1 / 3
+  display: block
+  height: auto
+
+  .right-wrapper {
+    margin-top: var(--theme-pad-06)
+    position: sticky
+    top: var(--theme-pad-06)
+  }
+}
+
+.line {
+  background-color: var(--theme-accept)
+  width: 60%
+  height: 1px
+}
+
+.summary {
+}
+
+.toc-fat {
+  position: relative
+  padding-top: var(--theme-pad-04)
+  font-family: Sarasa Gothic SC
+  font-style: normal
+  font-weight: bold
+  font-size: var(--theme-size-base)
+  display: flex
+  align-items: flex-end
+  color: var(--theme-base00)
+}
+
+.toc {
+  padding-top: var(--theme-pad-02)
+  position: relative
+  font-family: Sarasa Gothic SC
+  font-style: normal
+  font-weight: 500
+  font-size: var(--theme-size-base)
+  display: flex
+  align-items: flex-end
+  font-feature-settings: 'zero' on
+  color: var(--theme-base03)
+}
