@@ -1,4 +1,4 @@
-<div class="login-page-banner" @banner-trigger>
+<div class="login-page-banner">
   <div class="container">
     <div class="login">
       <h1>登录</h1>
@@ -8,6 +8,7 @@
         id="username"
         type="text"
         class="username-box"
+        [(ngModel)]="username"
       />
       <h5 class="textdarcula">密码</h5>
       <input
@@ -15,12 +16,13 @@
         id="password"
         type="password"
         class="username-box"
+        [(ngModel)]="password"
       />
+      <div class="error">{{ error }}</div>
       <div class="foot">
-        <button class="btn login-btn">登录</button>
+        <button class="btn login-btn" (click)="login()">登录</button>
         <button class="btn ghost-btn" routerLink="/register">注册</button>
         <button class="btn ghost-btn">忘记密码</button>
-
       </div>
     </div>
   </div>

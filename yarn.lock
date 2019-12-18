@@ -4911,14 +4911,6 @@ lost@^8.3.1:
     object-assign "^4.1.1"
     postcss "7.0.14"
 
-lost@^8.3.1:
-  version "8.3.1"
-  resolved "https://registry.npm.taobao.org/lost/download/lost-8.3.1.tgz#9fc6cbfff831264466cc30ab8fba5741945add7a"
-  integrity sha1-n8bL//gxJkRmzDCrj7pXQZRa3Xo=
-  dependencies:
-    object-assign "^4.1.1"
-    postcss "7.0.14"
-
 lru-cache@4.1.x:
   version "4.1.5"
   resolved "https://registry.npm.taobao.org/lru-cache/download/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
@@ -6234,7 +6226,7 @@ qs@6.7.0:
   resolved "https://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha1-QdwaAV49WB8WIXdr4xr7KHapsbw=
 
-qs@^6.5.1:
+qs@^6.5.1, qs@^6.9.1:
   version "6.9.1"
   resolved "https://registry.npm.taobao.org/qs/download/qs-6.9.1.tgz#20082c65cb78223635ab1a9eaca8875a29bf8ec9"
   integrity sha1-IAgsZct4IjY1qxqerKiHWim/jsk=
