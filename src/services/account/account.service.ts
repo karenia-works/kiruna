@@ -4,17 +4,20 @@ import { Observable, config, Subject } from 'rxjs';
 import 'rxjs/operators';
 import { apiConfig } from 'src/environments/backend-config';
 import { multicast } from 'rxjs/operators';
-import { userInfo } from 'os';
 import { LoginResult, TokenContext } from 'src/models/account';
 import { environment } from 'src/environments/environment';
 import { ApiResult } from 'src/models/result';
+import qs from 'qs';
 
 @Injectable({ providedIn: 'root' })
-export class AccountService implements HttpInterceptor {
+export class AccountService extends Subject<UserInfo | undefined>
+  implements HttpInterceptor {
   /**
    *
    */
   constructor(private httpClient: HttpClient) {
+    super();
+    this.next(undefined);
     this.loadLoginData();
   }
 
@@ -44,11 +47,12 @@ export class AccountService implements HttpInterceptor {
     }
   }
 
-  loadLoginData() {
+  async loadLoginData() {
     let login = window.localStorage.getItem('login');
     if (login !== null) {
       this.loginResult = JSON.parse(login);
       this.loggedIn = true;
+      this.next({ username: 'Some' });
     }
   }
 
@@ -56,32 +60,35 @@ export class AccountService implements HttpInterceptor {
     window.localStorage.removeItem('login');
   }
 
-  login(username: string, password: string): Observable<LoginResult> {
-    return new Observable<LoginResult>(sub => {
-      const { next, complete, error } = sub;
-      let ctx: TokenContext = {
-        client_id: 'client',
-        client_secret: 'client',
-        grant_type: 'password',
-        username,
-        password,
-        scope: 'api',
-      };
-      let res = this.httpClient.post<ApiResult<LoginResult>>(
-        environment.endpoint + apiConfig.endpoints.account.login,
-        ctx
-      );
-      res.subscribe({
-        next: info => {
-          this.loginResult = info.data;
-          next(info.data);
-          complete();
-        },
-        error: err => {
-          error(err);
-        },
-      });
-    });
+  async login(username: string, password: string): Promise<LoginResult> {
+    let ctx: TokenContext = {
+      client_id: 'client',
+      client_secret: 'client',
+      grant_type: 'password',
+      username,
+      password,
+      // scope: 'scope',
+    };
+    try {
+      let result = await this.httpClient
+        .post<LoginResult>(
+          environment.endpoint + apiConfig.endpoints.account.login,
+          qs.stringify(ctx),
+          {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+          }
+        )
+        .toPromise();
+      this.loginResult = result;
+      this.loggedIn = true;
+      this.saveLoginData();
+      return result;
+    } catch (e) {
+      this.loggedIn = false;
+      throw new Error('Failed to login. Reason: ' + JSON.stringify(e.error));
+    }
   }
 
   logout() {
@@ -92,5 +99,5 @@ export class AccountService implements HttpInterceptor {
 }
 
 export interface UserInfo {
-  id: string;
+  username: string;
 }

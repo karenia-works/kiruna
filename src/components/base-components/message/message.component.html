@@ -1,0 +1,8 @@
+<div class="messages-overlay">
+  <div class="message-wrapper">
+    <div class="msg" *ngFor="let msg of messages">
+      {{ msg.message }}
+      <div class="btn-ghost" (click)="removeMessage(msg.idx)">Dismiss</div>
+    </div>
+  </div>
+</div>

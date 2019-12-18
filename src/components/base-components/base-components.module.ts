@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { PagerComponent } from './pager/pager.component';
 import { FormsModule } from '@angular/forms';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
     ArticleAbstractComponent,
     PagerComponent,
     PaginatorComponent,
+    MessageComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule],
   exports: [
@@ -26,6 +28,7 @@ import { PaginatorComponent } from './paginator/paginator.component';
     ArticleAbstractComponent,
     PagerComponent,
     PaginatorComponent,
+    MessageComponent,
   ],
 })
 export class BaseComponentsModule {}

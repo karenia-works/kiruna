@@ -10,8 +10,9 @@ import { RouterOutlet } from '@angular/router';
 import { SearchpageModule } from 'src/pages/searchpage/searchpage.module';
 import { ProfessorpageModule } from 'src/pages/professorpage/professorpage.module';
 import { HttpClientModule } from '@angular/common/http';
-import {LoginPageComponent} from 'src/pages/login-page/login-page.component';
-import {RegisterPageComponent} from 'src/pages/register-page/register-page.component';
+import { LoginPageComponent } from 'src/pages/login-page/login-page.component';
+import { RegisterPageComponent } from 'src/pages/register-page/register-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, LoginPageComponent, RegisterPageComponent],
@@ -24,6 +25,7 @@ import {RegisterPageComponent} from 'src/pages/register-page/register-page.compo
     SearchpageModule,
     ProfessorpageModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
