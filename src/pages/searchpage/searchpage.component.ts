@@ -1,29 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
 import {articles} from '../../articleAbstractList';
+import { PageChangedEvent } from '../../components/base-components/paginator/paginator.component';
 @Component({
   selector: 'app-searchpage',
   templateUrl: './searchpage.component.html',
   styleUrls: ['./searchpage.component.styl'],
 })
 export class SearchpageComponent implements OnInit {
-  constructor() {}
   articles = articles;
-  // 分页组件配置项
-  private itemsPerpage: number ;
-  // 总条数
-  private totalcounts: number;
-  // 当前页码
-  private currentPage: number = 1;
-  // 页码变化，重新获取用户列表数据
-  pageChanged(event) {
-    // 查看监听到的数据
-    console.log('event:', event);
-    this.currentPage = event.page;
-    this.itemsPerpage = event.itemsPerPage;
-    // 重新获取用户列表数据
-    // this.getUserData();
+  // contentArray = new Array(90).fill('');
+  returnedArray;
+
+  ngOnInit(): void {
+    // this.contentArray = this.contentArray.map((v: string, i: number) => `Content line ${i + 1}`);
+    this.returnedArray = this.articles.slice(0, 5);
   }
-  ngOnInit() {}
+
+  pageChanged(event: PageChangedEvent): void {
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.returnedArray = this.articles.slice(startItem, endItem);
+  }
 }
 

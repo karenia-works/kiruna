@@ -1,0 +1,47 @@
+<div class="container">
+  <h5><br/></h5>
+
+  <div class="left_part">
+    <app-searchbar [type]="'专家'"></app-searchbar>
+    <div *ngFor="let pro of returnedPros">
+      <app-pro-abstract
+      [name]="pro.name"
+      [photoURL]="pro.photoURL"
+      [unit]="pro.unit"
+      [description]="pro.description"
+      [tags]="pro.tags"
+      [articleCount]="pro.articleCount"
+      [citationsCount]="pro.citationsCount"
+      [downloadCount]="pro.downloadCount"
+      [showFavorite]="true"
+      [hasBtn]="true">
+
+      </app-pro-abstract>
+    </div>
+    <app-paginator
+      [totalItems]="professors.length"
+      [itemsPerPage]="5"
+      [showBoundary]="true"
+      (pageChanged)="pageChanged($event)">
+    </app-paginator>
+  </div>
+
+  <div class="func_part">
+    <HR class="line" id="okk" SIZE="2" color="#27a881" />
+    <div class="func_h">
+      <a routerLink="../">个人中心</a>
+    </div>
+    <div class="func_t">
+      <a routerLink="../user">用户管理</a>
+    </div>
+    <div class="func_h">
+      <a routerLink="../article">论文管理</a>
+    </div>
+    <div class="func_h">
+      <a routerLink="." class="func_t">专家管理</a>
+    </div>
+    <div class="func_h">
+      <a routerLink="../pro-apply">专家申请管理</a>
+    </div>
+  </div>
+</div>

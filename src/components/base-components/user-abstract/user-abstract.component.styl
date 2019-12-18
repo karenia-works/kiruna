@@ -1,0 +1,68 @@
+.user-abstract > * {
+  margin-top: var(--theme-pad-01)
+  margin-bottom: var(--theme-pad-01)
+}
+.user-abstract {
+  margin-top:var(--theme-pad-05)
+}
+.top {
+  height : 100px
+  width : 100%
+}
+.left-panel {
+  float: left
+  width: auto
+  .photo {
+    .image {
+      width : 100px
+      height : 100px
+    }
+    margin-right: var(--theme-pad-05)
+  }
+}
+.right-panel {
+  float: left
+  width: auto
+  .name {
+    font-size: var(--theme-size-h3)
+  }
+
+  .from {
+    margin-top: 20px
+  }
+
+}
+.rightbtn{
+  float : right;
+}
+.edit-btn {
+  font-weight: 500
+  align-items :center
+  margin: var(--theme-pad-00) var(--theme-pad-03)
+  padding: var(--theme-pad-02) var(--theme-pad-04)
+  height: 40px
+  border-color :var(--palette-base07)
+  // --btn-border-color: var(--theme-accent-alter)
+  // --btn-background-color: var(--theme-base02)
+  // --btn-highlight-color: var(--theme-accent)
+  // --btn-highlight-text-color: var(--theme-base07)
+  // --btn-text-color: var(--theme-accent-alter)
+}
+  .delete-btn{
+    font-weight: 500
+    align-content: center
+    text-align: center
+    margin: var(--theme-pad-00) var(--theme-pad-03)
+    padding: var(--theme-pad-02) var(--theme-pad-04)
+    height: 40px
+    color: var(--palette-err)
+    border-color :var(--palette-err)
+    &:hover {
+      color: var(--palette-base07)
+      background-color: var(--palette-err)
+    }
+    &:focus {
+      border-color: var(--palette-err)
+    }
+  }
+

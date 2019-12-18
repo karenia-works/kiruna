@@ -4,6 +4,8 @@
 }
 
 .abstract {
+  width: 100%
+  float : left
   font-size: var(--theme-size-base)
   font-weight: normal
 }
@@ -20,3 +22,40 @@
 .article-abstract {
     margin-top:var(--theme-pad-05)
   }
+.rightbtn{
+  float : right;
+}
+  .left-panel{
+    float :left
+    width : auto
+  }
+.edit-btn {
+  font-weight: 500
+  align-items :center
+  margin: var(--theme-pad-00) var(--theme-pad-03)
+  padding: var(--theme-pad-02) var(--theme-pad-04)
+  height: 40px
+  border-color :var(--palette-base07)
+  // --btn-border-color: var(--theme-accent-alter)
+  // --btn-background-color: var(--theme-base02)
+  // --btn-highlight-color: var(--theme-accent)
+  // --btn-highlight-text-color: var(--theme-base07)
+  // --btn-text-color: var(--theme-accent-alter)
+}
+.delete-btn{
+  font-weight: 500
+  align-content: center
+  text-align: center
+  margin: var(--theme-pad-00) var(--theme-pad-03)
+  padding: var(--theme-pad-02) var(--theme-pad-04)
+  height: 40px
+  color: var(--palette-err)
+  border-color :var(--palette-err)
+  &:hover {
+    color: var(--palette-base07)
+    background-color: var(--palette-err)
+  }
+  &:focus {
+    border-color: var(--palette-err)
+  }
+}

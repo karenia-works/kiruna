@@ -1,10 +1,24 @@
 <div class="article-abstract">
-
-    <div class="title">{{ title }}</div>
-    <div class="info">{{ articleInfo }}</div>
-    <div class="tag-container">
-      <div class="tag" *ngFor="let tag of tags">{{ tag }}</div>
+  <div>
+    <div class="left-panel">
+      <div class="title">{{ title }}</div>
+      <div class="info">{{ articleInfo }}</div>
+      <div class="tag-container">
+        <div class="tag" *ngFor="let tag of tags">{{ tag }}</div>
+      </div>
     </div>
-    <div class="abstract">{{ abstract }}</div>
+    <div *ngIf="hasBtn == true">
+      <div class="rightbtn">
+        <button class="btn edit-btn">修改</button>
+        <button class="btn delete-btn">删除</button>
+      </div>
+    </div>
+  </div>
+
+    <div class="abstract">
+      <p>
+        {{ abstract }}
+      </p>
+    </div>
 
 </div>

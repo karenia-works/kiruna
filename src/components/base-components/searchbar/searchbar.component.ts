@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-searchbar',
@@ -6,9 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchbar.component.styl']
 })
 export class SearchbarComponent implements OnInit {
-
-  constructor() { }
-
+  @Input() type: string = '文献';
+  constructor() {}
   ngOnInit() {
   }
 

@@ -1,4 +1,4 @@
-<div class = "container" style="padding-top: 16px">
+<div class = "container">
   <h5><br></h5>
   <app-searchbar></app-searchbar>
 <!--  <div *ngFor="let article of articles">-->
@@ -7,5 +7,27 @@
 <!--                          [refCount]="article.refCount" [downloadCount]="article.downloadCount" [hasFile]="article.hasFile" [showFavorite]="article.showFavorite">-->
 <!--    </app-article-abstract>-->
 <!--  </div>-->
-  <app-pager></app-pager>
+  <div *ngFor="let article of returnedArray">
+    <app-article-abstract
+      [title]="article.title"
+      [articleType]="article.articleType"
+      [abstract]="article.abstract"
+      [authors]="article.authors"
+      [releaseDate]="article.releaseDate"
+      [tags]="article.tags"
+      [refCount]="article.refCount"
+      [downloadCount]="article.downloadCount"
+      [hasFile]="article.hasFile"
+      [showFavorite]="article.showFavorite"
+      [hasBtn]="false"
+    >
+    </app-article-abstract>
+  </div>
+
+  <app-paginator style="float:left"
+    [totalItems]="articles.length"
+    [itemsPerPage]="5"
+    [showBoundary]="true"
+    (pageChanged)="pageChanged($event)"
+  ></app-paginator>
 </div>

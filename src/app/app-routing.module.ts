@@ -23,6 +23,12 @@ import { LoginPageComponent } from 'src/pages/login-page/login-page.component';
 import { RegisterPageComponent } from 'src/pages/register-page/register-page.component';
 import { ProfessorRegisterModule } from 'src/pages/register-page/professor-register/professor-register.module';
 import { ProfessorRegisterComponent } from 'src/pages/register-page/professor-register/professor-register.component';
+import { AdminPageComponent } from '../pages/admin-page/admin-page.component';
+import { AdminPageModule } from '../pages/admin-page/admin-page.module';
+import { ArticleManageComponent } from '../pages/admin-page/article-manage/article-manage.component';
+import { ProApplyManageComponent } from '../pages/admin-page/pro-apply-manage/pro-apply-manage.component';
+import { ProManageComponent } from '../pages/admin-page/pro-manage/pro-manage.component';
+import { UserManageComponent } from '../pages/admin-page/user-manage/user-manage.component';
 
 const routes: Routes = [
   {
@@ -80,6 +86,31 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'admin',
+    children: [
+      {
+        path: '',
+        component: AdminPageComponent,
+      },
+      {
+        path: 'article',
+        component: ArticleManageComponent,
+      },
+      {
+        path: 'pro-apply',
+        component: ProApplyManageComponent,
+      },
+      {
+        path: 'pro',
+        component: ProManageComponent,
+      },
+      {
+        path: 'user',
+        component: UserManageComponent,
+      },
+    ],
+  },
+  {
     // 404 page
     path: '**',
     component: NotFoundPageComponent,
@@ -99,6 +130,7 @@ const routes: Routes = [
     ProfessorpageModule,
     MySettingPageModule,
     ProfessorRegisterModule,
+    AdminPageModule,
   ],
   exports: [RouterModule],
 })

@@ -1,0 +1,19 @@
+<div class="user-abstract">
+  <div class="top">
+    <div class="left-panel">
+      <div class="photo">
+        <img class="image" [src]="photoURL">
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="name">{{name}}</div>
+      <div class="from">{{from}}</div>
+    </div>
+    <div *ngIf="hasBtn == true">
+      <div class="rightbtn">
+        <button class="btn edit-btn">修改</button>
+        <button class="btn delete-btn">删除</button>
+      </div>
+    </div>
+  </div>
+</div>
