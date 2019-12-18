@@ -21,6 +21,7 @@ import { MyPaymentPageComponent } from 'src/pages/personal-page/my-payment-page/
 import { MyPaymentPageModule } from 'src/pages/personal-page/my-payment-page/my-payment-page.module';
 import {LoginPageComponent} from 'src/pages/login-page/login-page.component';
 import {RegisterPageComponent} from 'src/pages/register-page/register-page.component';
+import {PaperpageComponent} from 'src/pages/paperpage/paperpage.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterPageComponent,
+  },
+  {
+    path: 'paper',
+    component: PaperpageComponent,
   },
   {
     path: 'p',

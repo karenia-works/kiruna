@@ -12,9 +12,10 @@ import { ProfessorpageModule } from 'src/pages/professorpage/professorpage.modul
 import { HttpClientModule } from '@angular/common/http';
 import {LoginPageComponent} from 'src/pages/login-page/login-page.component';
 import {RegisterPageComponent} from 'src/pages/register-page/register-page.component';
+import { PaperpageComponent } from '../pages/paperpage/paperpage.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginPageComponent, RegisterPageComponent],
+  declarations: [AppComponent, LoginPageComponent, RegisterPageComponent, PaperpageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
