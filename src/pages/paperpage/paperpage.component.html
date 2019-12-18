@@ -16,8 +16,15 @@
     <div class="doi">
       Doi: {{doi}}
     </div>
-    <div class="tag" *ngFor="let tag of tags">{{ tag }}</div>
-
+    <div class="tag-container">
+      <div class="tag">肺纤维化</div>
+      <div class="tag">紫杉醇脂质体</div>
+      <div class="tag">雾化</div>
+      <div class="tag">I型胶原</div>
+      <div class="tag">III型胶原</div>
+      <div class="tag">TGF-β1</div>
+    </div>
+    <br>
     <div class="number_part">
       <div class="download_part">
         <div class="down_title">
@@ -42,12 +49,42 @@
       {{abstract}}
     </div>
 
-
     <div class="href_part">
       <button class="btn download-btn">下载全文 PDF</button>
       <h4 class="text">或向下滑动以在线阅读</h4>
     </div>
 
+    <div>
+      <div class="article"></div>
+    </div>
+
+    <!-- Authors -->
+    <div class="title-block">
+      <h1 class="type">
+        作者
+      </h1>
+    </div>
+    <br>
+    <!-- Refs -->
+    <div class="title-block">
+      <h1 class="type">
+        引用
+      </h1>
+      <div class="link ghost-btn">
+        查看所有引用 (12)
+      </div>
+    </div>
+    <br>
+    <!-- Refeds -->
+    <div class="title-block">
+      <h1 class="type">
+        被引
+      </h1>
+      <div class="link ghost-btn">
+        查看所有被引 (7)
+      </div>
+    </div>
+    <br>
   </div>
 
   <div class="func_part">

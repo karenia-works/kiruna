@@ -1,7 +1,33 @@
 .container {
   display: flex
   flex-direction: row
-}
+};
+
+.article {
+  // 这里之后替换成文章内容
+  background-color: var(--theme-base05)
+  z-index: 200
+  margin-top var(--theme-pad-05)
+  border-bottom-width: var(--theme-pad-02)
+  border-bottom-style: solid
+  height: 40vh
+  width: 100vh
+  border-bottom-color: var(--theme-base04)
+};
+
+ .title-block {
+   display: flex
+   flex-direction: row
+   align-items: baseline
+   margin: var(--theme-pad-02) 0
+   justify-content: space-between
+
+   h1 {
+     display: block
+     margin: 0
+   }
+ }
+
 .info_part {
   lost-column: 4 / 5
   display: flex
@@ -34,7 +60,7 @@
   .doi {
     font-size: var(--theme-size-h5)
     color var(--theme-base03)
-    margin-bottom: 50px
+    margin-bottom: 10px
   }
 
   .abstract {
