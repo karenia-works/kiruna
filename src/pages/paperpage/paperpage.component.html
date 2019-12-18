@@ -17,10 +17,31 @@
       Doi: {{doi}}
     </div>
     <div class="tag" *ngFor="let tag of tags">{{ tag }}</div>
+
+    <div class="number_part">
+      <div class="download_part">
+        <div class="down_title">
+          被引
+        </div>
+        <div class="down_num">
+          {{refCount}}
+        </div>
+      </div>
+      <div class="money_part">
+        <div class="money_title">
+          下载
+        </div>
+        <div class="money_num">
+          {{downloadCount}}
+        </div>
+      </div>
+    </div>
+
     <h2>摘要</h2>
     <div class="abstract">
       {{abstract}}
     </div>
+
 
     <div class="href_part">
       <button class="btn download-btn">下载全文 PDF</button>
