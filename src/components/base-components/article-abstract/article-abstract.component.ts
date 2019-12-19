@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { stringify } from 'querystring';
+import dayjs from 'dayjs';
 
 @Component({
   selector: 'app-article-abstract',
@@ -24,8 +25,7 @@ export class ArticleAbstractComponent implements OnInit {
   ngOnInit() {}
 
   get articleInfo(): string {
-
-    return [this.articleType, this.releaseDate.toLocaleDateString(), this.authors]
+    return [this.articleType, dayjs(this.releaseDate).toString(), this.authors]
       .filter(val => val !== undefined)
       .join(' | ');
   }
