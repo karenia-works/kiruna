@@ -22,13 +22,13 @@
         </app-article-abstract>
       </div>
 
-      <app-paginator
-        [totalItems]="articles.length"
-        [itemsPerPage]="5"
-        [showBoundary]="true"
-        (pageChanged)="pageChanged($event)"
-      ></app-paginator>
     </div>
+    <app-paginator
+      [totalItems]="articles.length"
+      [itemsPerPage]="5"
+      [showBoundary]="true"
+      (pageChanged)="pageChanged($event)"
+    ></app-paginator>
   </div>
 
   <div class="right">
