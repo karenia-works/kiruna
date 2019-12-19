@@ -14,4 +14,7 @@ export class MyPaymentPageComponent implements OnInit {
     this.payNum = 0;
   }
 
+  onClickMe() {
+    if (this.payNum != 0) alert('您已支付' + this.payNum + '元');
+  }
 }

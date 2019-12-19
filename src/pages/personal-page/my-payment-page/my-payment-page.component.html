@@ -16,7 +16,10 @@
         </div>
 
         <h3>您将支付{{payNum}}元。</h3>
-        <h4>扫码支付：</h4>
+        <div class="pay">
+        <h4 class="t4">扫码支付：</h4> 
+        <button (click)="onClickMe()" class="btn pay-btn">完成支付</button>
+        </div>
 
         <div class="pic">
             <img class="image" src="../../../assets/payme.jpg">
