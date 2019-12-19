@@ -19,7 +19,7 @@ export class ArticleAbstractComponent implements OnInit {
   @Input() downloadCount?: number;
   @Input() hasFile: boolean;
   @Input() showFavorite: boolean;
-
+  @Input() hasBtn: boolean = false;
   constructor() {}
 
   ngOnInit() {}

@@ -19,7 +19,8 @@ import dayjs from 'dayjs';
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.styl'],
 })
-export class SearchbarComponent implements OnInit, OnChanges {
+export class SearchbarComponent implements OnInit {
+  @Input() type: string = '文献';
   constructor() {}
 
   @Output()
