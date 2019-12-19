@@ -1,5 +1,26 @@
+@lost flexbox flex
+//
 footer {
   background-color: var(--theme-base06)
-  color: var(--theme-base02)
+  color: var(--theme-base03)
   padding: var(--theme-pad-03) var(--theme-pad-00)
+
+  a {
+    color: inherit
+
+    &:hover {
+      text-decoration: underline
+    }
+  }
+}
+
+.container {
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-between
+}
+
+.col {
+  lost-column: 1 / 3
 }

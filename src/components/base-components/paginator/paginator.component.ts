@@ -86,8 +86,10 @@ export class PaginatorComponent implements OnInit, OnChanges {
     this.emitChanges();
   }
   numberPageClick(n: number) {
-    this.currentPage = n;
-    this.emitChanges();
+    if (this.currentPage != n) {
+      this.currentPage = n;
+      this.emitChanges();
+    }
   }
 }
 

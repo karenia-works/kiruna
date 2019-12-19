@@ -28,13 +28,13 @@ export class SearchbarComponent implements OnInit {
 
   @Input()
   params: PaperQueryParam = {
-    searchKw: '',
-    initialSkip: 0,
-    initialTake: 20,
+    kw: '',
+    skip: 0,
+    take: 20,
   };
 
   @Input() canShowAdvancedSearch: boolean = false;
-  showAdvancedSearch: boolean = true;
+  showAdvancedSearch: boolean = false;
 
   ngOnInit() {}
 
