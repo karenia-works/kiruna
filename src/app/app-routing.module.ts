@@ -47,11 +47,11 @@ const routes: Routes = [
     component: ProfessorRegisterComponent,
   },
   {
-    path: 'paper',
+    path: 'p/:id',
     component: PaperpageComponent,
   },
   {
-    path: 'p',
+    path: 'prof/:id',
     component: ProfessorpageComponent,
   },
   {
