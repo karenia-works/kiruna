@@ -25,26 +25,37 @@ export class SearchpageComponent implements OnInit {
   ) {
     activeRoute.queryParams.subscribe({
       next: params => {
-        console.log(params);
+        this.articles = [];
         this.queryParams = webQueryToPaperQueryParam(params);
-        this.loading = true;
-        queryService
-          .query(this.queryParams)
-          .query()
-          .subscribe({
-            next: val => {
-              this.loading = false;
-              this.articles = val.data;
-              this.totalCount = val.totalCount;
-              this.currentCount = parseInt(params.skip, 10);
-            },
-          });
+        if (
+          this.queryParams.author ||
+          this.queryParams.keyword ||
+          this.queryParams.kw
+        ) {
+          this.loading = true;
+          this.searching = true;
+          queryService
+            .query(this.queryParams)
+            .query()
+            .subscribe({
+              next: val => {
+                this.loading = false;
+                this.articles = val.data;
+                this.totalCount = val.totalCount;
+                this.currentCount = parseInt(params.skip, 10);
+              },
+            });
+        } else {
+          this.queryParams = { take: 20, skip: 0 };
+          this.searching = false;
+        }
       },
     });
   }
 
   queryParams: PaperQueryParam;
 
+  searching: boolean = false;
   loading: boolean = true;
 
   get pagerClass() {
@@ -53,7 +64,7 @@ export class SearchpageComponent implements OnInit {
 
   articles: Paper[] = [];
   // 分页组件配置项
-  private itemsPerpage: number;
+  private itemsPerpage: number = 20;
   // 总条数
   totalCount: number;
   // 当前页码

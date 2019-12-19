@@ -3,13 +3,18 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-not-found-page',
   templateUrl: './not-found-page.component.html',
-  styleUrls: ['./not-found-page.component.styl']
+  styleUrls: ['./not-found-page.component.styl'],
 })
 export class NotFoundPageComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  goBack() {
+    window.history.back();
   }
 
+  get path() {
+    return window.location.href;
+  }
 }

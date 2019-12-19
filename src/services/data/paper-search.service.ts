@@ -15,11 +15,11 @@ export class PaperSearchService {
   constructor(private httpClient: HttpClient) {}
 
   query(query: PaperQueryParam): PaperQuery {
-    if (query.initialSkip === undefined) {
-      query.initialSkip = 0;
+    if (query.skip === undefined) {
+      query.skip = 0;
     }
-    if (query.initialTake === undefined) {
-      query.initialTake = 20;
+    if (query.take === undefined) {
+      query.take = 20;
     }
     return new PaperQuery(query, this.httpClient);
   }
@@ -51,51 +51,51 @@ export class PaperQuery extends Subject<ApiListResult<Paper>> {
 
   transform(input: PaperQueryParam): { [param: string]: string | string[] } {
     let params: { [param: string]: string | string[] } = {};
-    if (input.searchKw) params.summary = input.searchKw;
-    if (input.keyword) params.keyword = input.keyword;
-    if (input.author) params.author = input.author;
+    if (input.kw !== undefined) params.summary = input.kw;
+    if (input.keyword !== undefined) params.keyword = input.keyword;
+    if (input.author !== undefined) params.author = input.author;
     if (input.startTime !== undefined)
       params.startTime = input.startTime.toISOString();
     if (input.endTime !== undefined)
       params.endTime = input.endTime.toISOString();
-    if (input.initialSkip !== undefined)
-      params.skip = input.initialSkip.toString();
+    if (input.skip !== undefined) params.skip = input.skip.toString();
     else params.skip = '0';
-    if (input.initialTake !== undefined)
-      params.take = input.initialTake.toString();
+    if (input.take !== undefined) params.take = input.take.toString();
     else params.take = '20';
     return params;
   }
 }
 
 export interface PaperQueryParam {
-  searchKw?: string;
+  kw?: string;
   keyword?: string[];
   author?: string[];
   startTime?: Dayjs;
   endTime?: Dayjs;
-  initialSkip?: number;
-  initialTake?: number;
+  skip?: number;
+  take?: number;
 }
 export function paperQueryParamToWebQuery(q: PaperQueryParam): Params {
+  if (q.skip === undefined) q.skip = 0;
+  if (q.take === undefined) q.take = 20;
   return {
-    kw: q.searchKw,
+    kw: q.kw,
     author: q.author,
     keyword: q.keyword,
     startTime: q.startTime ? q.startTime.toISOString() : undefined,
     endTime: q.endTime ? q.endTime.toISOString() : undefined,
-    take: q.initialTake.toString(),
-    skip: q.initialSkip.toString(),
+    take: q.take.toString(),
+    skip: q.skip.toString(),
   };
 }
 export function webQueryToPaperQueryParam(params: Params): PaperQueryParam {
   let re: PaperQueryParam = {
-    searchKw: params.kw,
+    kw: params.kw,
     startTime:
       params.startTime === undefined ? undefined : dayjs(params.startTime),
-    endTime: params.endTime === undefined ? undefined: dayjs(params.endTime) ,
-    initialTake: params.take === undefined ? 20 : params.take,
-    initialSkip: params.skip === undefined ? 0 : params.skip,
+    endTime: params.endTime === undefined ? undefined : dayjs(params.endTime),
+    take: params.take === undefined ? 20 : params.take,
+    skip: params.skip === undefined ? 0 : params.skip,
   };
 
   let author = params.author;
