@@ -16,6 +16,14 @@ searchbar-default-accent-color = var(--theme-accent)
 .searchbar-row {
   display: flex
   flex-direction: row
+
+  *:first-child {
+    margin-left: 0
+  }
+
+  *:last-child {
+    margin-right: 0
+  }
 }
 
 .searchbar {
@@ -66,10 +74,10 @@ searchbar-default-accent-color = var(--theme-accent)
   }
 }
 
-.search-btn {
+.btn.search-btn {
   font-weight: 500
   margin: var(--theme-pad-00) var(--theme-pad-03)
-  padding: var(--theme-pad-02) var(--theme-pad-04)
+  padding: var(--theme-pad-02) var(--theme-pad-05)
 }
 
 .row {
@@ -87,13 +95,15 @@ searchbar-default-accent-color = var(--theme-accent)
     display: flex
     flex-direction: row
     align-items: baseline
+    justify-content: stretch
 
     label {
       lost-column: 1 / 5
     }
 
     .value {
-      lost-column: 4 / 5
+      flex-grow: 1
+      // lost-column: 4 / 5
     }
   }
 }
