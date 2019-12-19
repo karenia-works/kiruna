@@ -11,6 +11,8 @@ import {
   PaperQueryParam,
 } from 'src/services/data/paper-search.service';
 import { Paper } from 'src/models/paper';
+import { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 
 @Component({
   selector: 'app-searchbar',
@@ -42,6 +44,11 @@ export class SearchbarComponent implements OnInit, OnChanges {
     if (this.params.keyword !== undefined)
       this._keywords = this.params.keyword.join(', ');
     else this._keywords = '';
+    if (this.params.startTime !== undefined)
+      this._startTime = this.params.startTime;
+    else this._startTime = undefined;
+    if (this.params.endTime !== undefined) this._endTime = this.params.endTime;
+    else this._endTime = undefined;
   }
 
   search() {
@@ -52,6 +59,7 @@ export class SearchbarComponent implements OnInit, OnChanges {
   get authors() {
     return this._authors;
   }
+
   set authors(val) {
     this._authors;
     if (/\s+/.test(val)) this.params.author = undefined;
@@ -65,5 +73,25 @@ export class SearchbarComponent implements OnInit, OnChanges {
   set keywords(val) {
     if (/\s+/.test(val)) this.params.keyword = undefined;
     else this.params.keyword = val.split(/[,，] ?/);
+  }
+
+  _startTime: Dayjs;
+  get startTime() {
+    if (this._startTime === undefined) return undefined;
+    else return this._startTime.format('YYYY-MM-DD');
+  }
+  set startTime(val) {
+    if (val !== '') this.params.startTime = dayjs(val);
+    else this.params.startTime = undefined;
+  }
+
+  _endTime: Dayjs;
+  get endTime() {
+    if (this._endTime === undefined) return undefined;
+    else return this._endTime.format('YYYY-MM-DD');
+  }
+  set endTime(val) {
+    if (val !== '') this.params.endTime = dayjs(val);
+    else this.params.endTime = undefined;
   }
 }

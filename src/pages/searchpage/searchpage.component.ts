@@ -5,6 +5,7 @@ import {
   PaperSearchService as PaperQueryService,
   PaperQueryParam,
   paperQueryParamToWebQuery,
+  webQueryToPaperQueryParam,
 } from 'src/services/data/paper-search.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Dayjs } from 'dayjs';
@@ -24,14 +25,8 @@ export class SearchpageComponent implements OnInit {
   ) {
     activeRoute.queryParams.subscribe({
       next: params => {
-        this.queryParams = {
-          searchKw: params.kw,
-          keyword: params.keywords,
-          startTime: params.startTime ? new Dayjs(params.startTime) : undefined,
-          endTime: params.endTime ? new Dayjs(params.endTime) : undefined,
-          initialTake: params.take === undefined ? 20 : params.take,
-          initialSkip: params.skip === undefined ? 0 : params.skip,
-        };
+        console.log(params);
+        this.queryParams = webQueryToPaperQueryParam(params);
         this.loading = true;
         queryService
           .query(this.queryParams)
@@ -41,7 +36,7 @@ export class SearchpageComponent implements OnInit {
               this.loading = false;
               this.articles = val.data;
               this.totalCount = val.totalCount;
-              this.currentCount = params.skip;
+              this.currentCount = parseInt(params.skip, 10);
             },
           });
       },

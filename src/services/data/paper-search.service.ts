@@ -5,8 +5,8 @@ import { Subject } from 'rxjs';
 import { apiConfig } from 'src/environments/backend-config';
 import { environment } from 'src/environments/environment';
 import { ApiListResult } from 'src/models/result';
-import { Dayjs } from 'dayjs';
-import { Params } from '@angular/router';
+import dayjs, { Dayjs } from 'dayjs';
+import { Params, ParamMap } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -89,13 +89,22 @@ export function paperQueryParamToWebQuery(q: PaperQueryParam): Params {
   };
 }
 export function webQueryToPaperQueryParam(params: Params): PaperQueryParam {
-  return {
+  let re: PaperQueryParam = {
     searchKw: params.kw,
-    author: params.author,
-    keyword: params.keyword,
-    startTime: params.startTime ? new Dayjs(params.startTime) : undefined,
-    endTime: params.endTime ? new Dayjs(params.endTime) : undefined,
+    startTime:
+      params.startTime === undefined ? undefined : dayjs(params.startTime),
+    endTime: params.endTime === undefined ? undefined: dayjs(params.endTime) ,
     initialTake: params.take === undefined ? 20 : params.take,
     initialSkip: params.skip === undefined ? 0 : params.skip,
   };
+
+  let author = params.author;
+  if (author !== undefined && typeof author === 'string') re.author = [author];
+  else re.author = author as string[];
+
+  let keyword = params.keyword;
+  if (keyword !== undefined && typeof keyword === 'string')
+    re.keyword = [keyword];
+  else re.keyword = keyword as string[];
+  return re;
 }
