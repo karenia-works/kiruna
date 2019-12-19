@@ -23,6 +23,7 @@ import { LoginPageComponent } from 'src/pages/login-page/login-page.component';
 import { RegisterPageComponent } from 'src/pages/register-page/register-page.component';
 import { ProfessorRegisterModule } from 'src/pages/register-page/professor-register/professor-register.module';
 import { ProfessorRegisterComponent } from 'src/pages/register-page/professor-register/professor-register.component';
+import {PaperpageComponent} from 'src/pages/paperpage/paperpage.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   },
   {
     path: 'p/:id',
+    component: PaperpageComponent,
+  },
+  {
+    path: 'prof/:id',
     component: ProfessorpageComponent,
   },
   {
