@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { stringify } from 'querystring';
 import dayjs from 'dayjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-abstract',
@@ -8,6 +9,7 @@ import dayjs from 'dayjs';
   styleUrls: ['./article-abstract.component.styl'],
 })
 export class ArticleAbstractComponent implements OnInit {
+  @Input() id: number;
   @Input() title: string;
   @Input() articleType?: string;
   @Input() abstract?: string;
@@ -20,7 +22,9 @@ export class ArticleAbstractComponent implements OnInit {
   @Input() hasFile: boolean;
   @Input() showFavorite: boolean;
   @Input() hasBtn: boolean = false;
-  constructor() {}
+
+  @Input() linked: boolean = true;
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
@@ -28,5 +32,11 @@ export class ArticleAbstractComponent implements OnInit {
     return [this.articleType, dayjs(this.releaseDate).toString(), this.authors]
       .filter(val => val !== undefined)
       .join(' | ');
+  }
+
+  jump() {
+    if (this.linked && this.id) {
+      this.router.navigateByUrl('/p/' + this.id);
+    }
   }
 }

@@ -1,37 +1,32 @@
 <div class="container">
   <div class="info_part">
-    <h3><br></h3>
+    <h3><br /></h3>
     <div class="journal">
-      {{journalType}} | {{journalName}} | {{journalYear}}({{journalVolume}})
+      {{ paper.type }} | {{ journalName }} | {{ journalYear }}({{
+        journalVolume
+      }})
     </div>
     <div class="jumbotron">
-      {{title}}
+      {{ paper.title }}
     </div>
     <div class="authors">
-      {{authors}}
+      {{ paper.authors }}
     </div>
     <div class="organizations">
-      {{organizations}}
+      {{ paper.site }}
     </div>
-    <div class="doi">
-      Doi: {{doi}}
-    </div>
+    <div class="doi">Doi: {{ doi }}</div>
     <div class="tag-container">
-      <div class="tag">肺纤维化</div>
-      <div class="tag">紫杉醇脂质体</div>
-      <div class="tag">雾化</div>
-      <div class="tag">I型胶原</div>
-      <div class="tag">III型胶原</div>
-      <div class="tag">TGF-β1</div>
+      <div class="tag" *ngFor="let tag of paper.keywords">{{ tag }}</div>
     </div>
-    <br>
+    <br />
     <div class="number_part">
       <div class="download_part">
         <div class="down_title">
           被引
         </div>
         <div class="down_num">
-          {{refCount}}
+          {{ paper.quote }}
         </div>
       </div>
       <div class="money_part">
@@ -39,24 +34,23 @@
           下载
         </div>
         <div class="money_num">
-          {{downloadCount}}
+          {{ downloadCount }}
         </div>
       </div>
     </div>
 
     <h2>摘要</h2>
     <div class="abstract">
-      {{abstract}}
+      {{ paper.summary }}
     </div>
 
+    <!--
     <div class="href_part">
       <button class="btn download-btn">下载全文 PDF</button>
-      <h4 class="text">或向下滑动以在线阅读</h4>
     </div>
-
     <div>
       <div class="article"></div>
-    </div>
+    </div> -->
 
     <!-- Authors -->
     <div class="title-block">
@@ -64,7 +58,7 @@
         作者
       </h1>
     </div>
-    <br>
+    <br />
     <!-- Refs -->
     <div class="title-block">
       <h1 class="type">
@@ -74,7 +68,7 @@
         查看所有引用 (12)
       </div>
     </div>
-    <br>
+    <br />
     <!-- Refeds -->
     <div class="title-block">
       <h1 class="type">
@@ -84,33 +78,35 @@
         查看所有被引 (7)
       </div>
     </div>
-    <br>
+    <br />
   </div>
 
-  <div class="func_part">
-    <button class="btn download-btn">下载全文 PDF</button>
-    <div class="func_h">
-      <a>生成引用</a>
-    </div>
-    <div class="func_h">
-      <a>分享本文</a>
-    </div>
-    <br>
-    <HR class="line" id="okk" SIZE="2" color="#27a881" />
-    <div class="func_t">
-      <a routerLink="." class="func_t">摘要</a>
-    </div>
-    <div class="func_h">
-      <a routerLink="favorite">全文</a>
-    </div>
-    <div class="func_h">
-      <a routerLink="download">作者信息</a>
-    </div>
-    <div class="func_h">
-      <a routerLink="follow">引用(12)</a>
-    </div>
-    <div class="func_h">
-      <a routerLink="setting">被引(7)</a>
+  <div class="func-wrapper">
+    <div class="func_part">
+      <button class="btn download-btn">下载全文 PDF</button>
+      <div class="func_h">
+        <a>生成引用</a>
+      </div>
+      <div class="func_h">
+        <a>分享本文</a>
+      </div>
+      <br />
+      <HR class="line" id="okk" SIZE="2" color="#27a881" />
+      <div class="func_t">
+        <a routerLink="." class="func_t">摘要</a>
+      </div>
+      <div class="func_h">
+        <a routerLink="favorite">全文</a>
+      </div>
+      <div class="func_h">
+        <a routerLink="download">作者信息</a>
+      </div>
+      <div class="func_h">
+        <a routerLink="follow">引用(12)</a>
+      </div>
+      <div class="func_h">
+        <a routerLink="setting">被引(7)</a>
+      </div>
     </div>
   </div>
 </div>

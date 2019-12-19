@@ -1,7 +1,9 @@
 <div class="article-abstract">
   <div>
     <div class="left-panel">
-      <div class="title">{{ title }}</div>
+      <div class="title" ngClass="{'link': linked}" (click)="jump()">
+        {{ title }}
+      </div>
       <div class="info">{{ articleInfo }}</div>
       <div class="tag-container">
         <div class="tag" *ngFor="let tag of tags">{{ tag }}</div>
@@ -15,10 +17,9 @@
     </div>
   </div>
 
-    <div class="abstract">
-      <p>
-        {{ abstract }}
-      </p>
-    </div>
-
+  <div class="abstract">
+    <p>
+      {{ abstract }}
+    </p>
+  </div>
 </div>
