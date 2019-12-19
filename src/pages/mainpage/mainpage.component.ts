@@ -6,6 +6,11 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import {
+  PaperQueryParam,
+  paperQueryParamToWebQuery,
+} from 'src/services/data/paper-search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mainpage',
@@ -32,7 +37,14 @@ import {
   ],
 })
 export class MainpageComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  startQuery(query: PaperQueryParam) {
+    console.log('Searched', query);
+    this.router.navigate(['s'], {
+      queryParams: paperQueryParamToWebQuery(query),
+    });
+  }
 }

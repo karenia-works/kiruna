@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="info_part">
+    <h3><br></h3>
+    <div class="journal">
+      {{journalType}} | {{journalName}} | {{journalYear}}({{journalVolume}})
+    </div>
+    <div class="jumbotron">
+      {{title}}
+    </div>
+    <div class="authors">
+      {{authors}}
+    </div>
+    <div class="organizations">
+      {{organizations}}
+    </div>
+    <div class="doi">
+      Doi: {{doi}}
+    </div>
+    <div class="tag-container">
+      <div class="tag">肺纤维化</div>
+      <div class="tag">紫杉醇脂质体</div>
+      <div class="tag">雾化</div>
+      <div class="tag">I型胶原</div>
+      <div class="tag">III型胶原</div>
+      <div class="tag">TGF-β1</div>
+    </div>
+    <br>
+    <div class="number_part">
+      <div class="download_part">
+        <div class="down_title">
+          被引
+        </div>
+        <div class="down_num">
+          {{refCount}}
+        </div>
+      </div>
+      <div class="money_part">
+        <div class="money_title">
+          下载
+        </div>
+        <div class="money_num">
+          {{downloadCount}}
+        </div>
+      </div>
+    </div>
+
+    <h2>摘要</h2>
+    <div class="abstract">
+      {{abstract}}
+    </div>
+
+    <div class="href_part">
+      <button class="btn download-btn">下载全文 PDF</button>
+      <h4 class="text">或向下滑动以在线阅读</h4>
+    </div>
+
+    <div>
+      <div class="article"></div>
+    </div>
+
+    <!-- Authors -->
+    <div class="title-block">
+      <h1 class="type">
+        作者
+      </h1>
+    </div>
+    <br>
+    <!-- Refs -->
+    <div class="title-block">
+      <h1 class="type">
+        引用
+      </h1>
+      <div class="link ghost-btn">
+        查看所有引用 (12)
+      </div>
+    </div>
+    <br>
+    <!-- Refeds -->
+    <div class="title-block">
+      <h1 class="type">
+        被引
+      </h1>
+      <div class="link ghost-btn">
+        查看所有被引 (7)
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="func_part">
+    <button class="btn download-btn">下载全文 PDF</button>
+    <div class="func_h">
+      <a>生成引用</a>
+    </div>
+    <div class="func_h">
+      <a>分享本文</a>
+    </div>
+    <br>
+    <HR class="line" id="okk" SIZE="2" color="#27a881" />
+    <div class="func_t">
+      <a routerLink="." class="func_t">摘要</a>
+    </div>
+    <div class="func_h">
+      <a routerLink="favorite">全文</a>
+    </div>
+    <div class="func_h">
+      <a routerLink="download">作者信息</a>
+    </div>
+    <div class="func_h">
+      <a routerLink="follow">引用(12)</a>
+    </div>
+    <div class="func_h">
+      <a routerLink="setting">被引(7)</a>
+    </div>
+  </div>
+</div>
