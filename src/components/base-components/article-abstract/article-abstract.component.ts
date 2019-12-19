@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { stringify } from 'querystring';
+import dayjs from 'dayjs';
 
 @Component({
   selector: 'app-article-abstract',
@@ -18,14 +19,13 @@ export class ArticleAbstractComponent implements OnInit {
   @Input() downloadCount?: number;
   @Input() hasFile: boolean;
   @Input() showFavorite: boolean;
-
+  @Input() hasBtn: boolean = false;
   constructor() {}
 
   ngOnInit() {}
 
   get articleInfo(): string {
-
-    return [this.articleType, this.releaseDate.toLocaleDateString(), this.authors]
+    return [this.articleType, dayjs(this.releaseDate).toString(), this.authors]
       .filter(val => val !== undefined)
       .join(' | ');
   }

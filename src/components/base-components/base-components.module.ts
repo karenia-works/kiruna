@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { PagerComponent } from './pager/pager.component';
 import { FormsModule } from '@angular/forms';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { ProAbstractComponent } from './pro-abstract/pro-abstract.component';
+import { UserAbstractComponent } from './user-abstract/user-abstract.component';
 import { MessageComponent } from './message/message.component';
 
 @NgModule({
@@ -18,6 +20,8 @@ import { MessageComponent } from './message/message.component';
     ArticleAbstractComponent,
     PagerComponent,
     PaginatorComponent,
+    ProAbstractComponent,
+    UserAbstractComponent,
     MessageComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule],
@@ -28,6 +32,8 @@ import { MessageComponent } from './message/message.component';
     ArticleAbstractComponent,
     PagerComponent,
     PaginatorComponent,
+    ProAbstractComponent,
+    UserAbstractComponent,
     MessageComponent,
   ],
 })

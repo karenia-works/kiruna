@@ -1,0 +1,30 @@
+<div class="pro-abstract">
+  <div class="top">
+    <div class="left-panel">
+      <div class="photo">
+        <img class="image" [src]="photoURL">
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="title">{{name}}</div>
+      <div class="info">{{ proInfo }}</div>
+      <div class="tag-container">
+        <div class="tag" *ngFor="let tag of tags">
+          {{tag}}
+        </div>
+      </div>
+    </div>
+    <div *ngIf="hasBtn == true">
+      <div class="rightbtn">
+        <button class="btn edit-btn">{{btn1Name}}</button>
+        <button class="btn delete-btn">{{btn2Name}}</button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p class="description">
+      {{description}}
+    </p>
+  </div>
+</div>

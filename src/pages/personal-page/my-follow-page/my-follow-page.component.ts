@@ -22,4 +22,9 @@ export class MyFollowPageComponent implements OnInit {
     const endItem = event.page * event.itemsPerPage;
     this.returnedArray = this.follows.slice(startItem, endItem);
   }
+
+  onClickMe() {
+    alert('您已取消关注！');
+    // 接口
+  }
 }

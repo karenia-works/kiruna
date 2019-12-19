@@ -1,14 +1,14 @@
 <div class="searchbar-wrap">
   <div class="searchbar-row row">
     <div class="searchbar">
-      <div class="search-item">文献</div>
+      <div class="search-item">{{ type }}</div>
       <input
         name="search_box"
         id="search_box"
         type="text"
         class="search-box"
         placeholder="输入要搜索的内容"
-        [(ngModel)]="params.searchKw"
+        [(ngModel)]="params.kw"
       />
     </div>
 

@@ -18,6 +18,7 @@
         [refCount]="article.quote"
         [hasFile]="article.site"
         [showFavorite]="false"
+        [hasBtn]="false"
       >
       </app-article-abstract>
     </div>
@@ -30,8 +31,9 @@
       (pageChanged)="pageChanged($event)"
     ></app-paginator>
   </div>
-  <div class="no-result" *ngIf="articles.length === 0">
+  <div class="no-result" *ngIf="articles.length === 0 && searching">
     <div class="jumbotron">啥都没搜到</div>
     <div class="smaller">换一下关键词试试吧</div>
   </div>
+  >>>>>>> master
 </div>

@@ -28,6 +28,12 @@ import { MyConnectionPageComponent } from 'src/pages/professorpage/my-connection
 import { ProfessorPageModule } from 'src/pages/professorpage/professorpage.module';
 import { MyArticlePageModule } from 'src/pages/professorpage/my-article-page/my-article-page.module';
 import { MyConnectionPageModule } from 'src/pages/professorpage/my-connection-page/my-connection-page.module';
+import { AdminPageComponent } from '../pages/admin-page/admin-page.component';
+import { AdminPageModule } from '../pages/admin-page/admin-page.module';
+import { ArticleManageComponent } from '../pages/admin-page/article-manage/article-manage.component';
+import { ProApplyManageComponent } from '../pages/admin-page/pro-apply-manage/pro-apply-manage.component';
+import { ProManageComponent } from '../pages/admin-page/pro-manage/pro-manage.component';
+import { UserManageComponent } from '../pages/admin-page/user-manage/user-manage.component';
 
 const routes: Routes = [
   {
@@ -102,6 +108,31 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'admin',
+    children: [
+      {
+        path: '',
+        component: AdminPageComponent,
+      },
+      {
+        path: 'article',
+        component: ArticleManageComponent,
+      },
+      {
+        path: 'pro-apply',
+        component: ProApplyManageComponent,
+      },
+      {
+        path: 'pro',
+        component: ProManageComponent,
+      },
+      {
+        path: 'user',
+        component: UserManageComponent,
+      },
+    ],
+  },
+  {
     // 404 page
     path: '**',
     component: NotFoundPageComponent,
@@ -123,6 +154,7 @@ const routes: Routes = [
     MyPaymentPageModule,
     MySettingPageModule,
     ProfessorRegisterModule,
+    AdminPageModule,
   ],
   exports: [RouterModule],
 })
