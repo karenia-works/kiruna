@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="left">
+    <h1 class="title">
+      文章
+    </h1>
+    <div>
+      <div *ngFor="let article of returnedArray">
+        <app-article-abstract [title]="article.title" [articleType]="article.articleType" [abstract]="article.abstract"
+                              [authors]="article.authors" [releaseDate]="article.releaseDate" [tags]="article.tags"
+                              [refCount]="article.refCount" [downloadCount]="article.downloadCount" [hasFile]="article.hasFile"
+                              [showFavorite]="article.showFavorite">
+        </app-article-abstract>
+      </div>
+
+      <app-paginator [totalItems]="articles.length" [itemsPerPage]="5" [showBoundary]="true"
+                     (pageChanged)="pageChanged($event)"></app-paginator>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="right-wrapper">
+      <div class="line"></div>
+      <div class="summary">
+        <div class="toc-fat">
+          <a routerLink=".." class="func_h">专家简介</a>
+        </div>
+        <div class="toc">
+          <a routerLink="." class="func_t">文章 ({{articleNum}})</a>
+        </div>
+        <div class="toc">
+          <a routerLink="../connection" class="func_h">人脉</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,19 +1,49 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
+import { articles } from '../../articleAbstractList';
+import { connections } from '../../connectionList';
+import { tags } from '../../tagList';
 
 @Component({
-  selector: 'app-mainpage',
+  selector: 'app-professorpage',
   templateUrl: './professorpage.component.html',
   styleUrls: ['./professorpage.component.styl'],
 })
-export class ProfessorpageComponent implements OnInit {
+export class ProfessorPageComponent implements OnInit {
+  articles = articles;
+  returnedArticlesArray;
+  photo;
+  name;
+  unit;
+  description;
+  personalSite;
+  weiboName;
+  weiboSite;
+  tags = tags;
+  returnedTagsArray;
+  articleNum;
+  quotedNum;
+  downloadedNum;
+  quotes = connections;
+  quoteds = connections
+  returnedQuotesArray;
+  returnedQuotedsArray;
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.returnedArticlesArray = this.articles.slice(0, 3);
+    this.photo = 'https://pic3.zhimg.com/a82b51c4284beda5b29d645fa4f91c97_xl.jpg';
+    this.name = '闫志全';
+    this.unit = '北京航空航天大学';
+    this.description = '化学博士。现在在主攻社会行为学和生物学，以及化学物质在其中的作用。';
+    this.personalSite = 'http://yan-zhiquan.com';
+    this.weiboName = '@你家猫一米八';
+    this.weiboSite = 'https://weibo.com/';
+    this.articleNum = '30';
+    this.quotedNum = '115';
+    this.downloadedNum = '65536';
+    this.returnedTagsArray = this.tags.slice(0, 3);
+    this.returnedQuotesArray = this.quotes.slice(0, 2);
+    this.returnedQuotedsArray = this.quoteds.slice(0, 2);
+  }
 }

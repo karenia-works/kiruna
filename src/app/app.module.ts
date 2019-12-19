@@ -8,16 +8,20 @@ import { MainpageModule } from 'src/pages/mainpage/mainpage.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterOutlet } from '@angular/router';
 import { SearchpageModule } from 'src/pages/searchpage/searchpage.module';
-import { ProfessorpageModule } from 'src/pages/professorpage/professorpage.module';
+import { ProfessorPageModule } from 'src/pages/professorpage/professorpage.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from 'src/pages/login-page/login-page.component';
 import { RegisterPageComponent } from 'src/pages/register-page/register-page.component';
 import { FormsModule } from '@angular/forms';
 import { PaperpageComponent } from '../pages/paperpage/paperpage.component';
 
-
 @NgModule({
-  declarations: [AppComponent, LoginPageComponent, RegisterPageComponent, PaperpageComponent],
+  declarations: [
+    AppComponent,
+    LoginPageComponent,
+    RegisterPageComponent,
+    PaperpageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,7 +29,7 @@ import { PaperpageComponent } from '../pages/paperpage/paperpage.component';
     MainpageModule,
     BrowserAnimationsModule,
     SearchpageModule,
-    ProfessorpageModule,
+    ProfessorPageModule,
     HttpClientModule,
     FormsModule,
   ],
