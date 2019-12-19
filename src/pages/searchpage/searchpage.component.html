@@ -3,6 +3,7 @@
   <app-searchbar
     [params]="queryParams"
     (startQuery)="startQuery($event)"
+    [canShowAdvancedSearch]="true"
   ></app-searchbar>
 
   <div [ngClass]="pagerClass" *ngIf="articles.length !== 0">

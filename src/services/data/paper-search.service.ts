@@ -80,7 +80,8 @@ export interface PaperQueryParam {
 export function paperQueryParamToWebQuery(q: PaperQueryParam): Params {
   return {
     kw: q.searchKw,
-    keywords: q.keyword,
+    author: q.author,
+    keyword: q.keyword,
     startTime: q.startTime ? q.startTime.toISOString() : undefined,
     endTime: q.endTime ? q.endTime.toISOString() : undefined,
     take: q.initialTake.toString(),
@@ -90,7 +91,8 @@ export function paperQueryParamToWebQuery(q: PaperQueryParam): Params {
 export function webQueryToPaperQueryParam(params: Params): PaperQueryParam {
   return {
     searchKw: params.kw,
-    keyword: params.keywords,
+    author: params.author,
+    keyword: params.keyword,
     startTime: params.startTime ? new Dayjs(params.startTime) : undefined,
     endTime: params.endTime ? new Dayjs(params.endTime) : undefined,
     initialTake: params.take === undefined ? 20 : params.take,
