@@ -46,7 +46,7 @@ const routes: Routes = [
     component: ProfessorRegisterComponent,
   },
   {
-    path: 'p',
+    path: 'p/:id',
     component: ProfessorpageComponent,
   },
   {

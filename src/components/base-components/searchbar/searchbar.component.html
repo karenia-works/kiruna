@@ -7,8 +7,9 @@
       type="text"
       class="search-box"
       placeholder="输入要搜索的内容"
+      [(ngModel)]="params.searchKw"
     />
   </div>
 
-  <button class="btn search-btn">搜索</button>
+  <button class="btn search-btn" (click)="search()">搜索</button>
 </div>
