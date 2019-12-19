@@ -4,6 +4,18 @@
   </a>
   <a class="nav-item nav-link" routerLink="/s">检索</a>
   <a class="nav-item nav-link" routerLink="/explore">发现</a>
-  <a class="nav-item nav-link push right" routerLink="/login">登录</a>
-  <a class="nav-item nav-link right" routerLink="/register">注册</a>
+  <div
+    class=""
+    *ngIf="!accountService.loggedIn; then notLoggedIn; else loggedIn"
+  ></div>
+  <ng-template #notLoggedIn>
+    <a class="nav-item nav-link push right" routerLink="/login">登录</a>
+    <a class="nav-item nav-link right" routerLink="/register">注册</a>
+  </ng-template>
+  <ng-template #loggedIn>
+    <a class="nav-item nav-link push right" routerLink="/me">个人中心</a>
+    <a class="nav-item nav-link right" (click)="accountService.logout()"
+      >登出</a
+    >
+  </ng-template>
 </div>

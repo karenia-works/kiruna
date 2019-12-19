@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="info_part">
+      <h3><br></h3>
+        <div class="jumbotron">
+            {{name}}
+        </div>
+
+        <div class="college">
+            {{college}}
+        </div>
+
+        <div class="number_part">
+            <div class="download_part">
+                <div class="down_title">
+                    已下载
+                </div>
+                <div class="down_num">
+                    {{downloadNum}}
+                </div>
+            </div>
+            <div class="money_part">
+                <div class="money_title">
+                    余额
+                </div>
+                <div class="money_num">
+                    {{MoneyLeft}}r
+                </div>
+            </div>
+        </div>
+
+        <div class="href_part">
+            <a routerLink="setting">编辑我的信息</a>
+            <br />
+            <a routerLink="payment">充值</a>
+        </div>
+
+        <div class="recent_part">
+            <div class="recent_head">
+                <h1 class="recent_title">
+                    最近收藏
+                </h1>
+                <div class="recent_more">
+                    <a routerLink="favorite">查看更多</a>
+                </div>
+            </div>
+
+            <div class="recent_subject" *ngFor="let article of returnedArray">
+
+                <app-article-abstract [title]="article.title" [articleType]="article.articleType" [abstract]="article.abstract" [authors]="article.authors" [releaseDate]="article.releaseDate" [tags]="article.tags" [refCount]="article.refCount" [downloadCount]="article.downloadCount"
+                    [hasFile]="article.hasFile" [showFavorite]="article.showFavorite">
+                </app-article-abstract>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="func_part">
+        <HR class="line" id="okk" SIZE="2" color="#27a881" />
+        <div class="func_t">
+            <a routerLink="." class="func_t">个人中心</a>
+        </div>
+        <div class="func_h">
+            <a routerLink="favorite">我的收藏</a>
+        </div>
+        <div class="func_h">
+            <a routerLink="download">我的下载</a>
+        </div>
+        <div class="func_h">
+            <a routerLink="follow">我的关注</a>
+        </div>
+        <div class="func_h">
+            <a routerLink="setting">个人设置</a>
+        </div>
+        <div class="func_h">
+            <a routerLink="payment">财务管理</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="left_part">
+      <h5></h5>
+        <h1 class="recent_title">
+            我的关注
+        </h1>
+
+        <div>
+            <div *ngFor="let follow of returnedArray" class="model">
+                <div class="pic">
+                    <img class="image" [src]="follow.pic_url" />
+                </div>
+                <div class="label">
+                    <div class="name">{{ follow.name }}</div>
+                    <div class="from">{{ follow.from }}</div>
+                </div>
+                <div class="button">
+                    <button class="btn search-btn">取消关注</button>
+                </div>
+            </div>
+
+            <app-paginator [totalItems]="follows.length" [itemsPerPage]="5" [showBoundary]="true" (pageChanged)="pageChanged($event)" class="pager">
+            </app-paginator>
+        </div>
+    </div>
+
+    <div class="right_part">
+        <HR class="line" id="okk" SIZE="2" color="#27a881" />
+        <div class="func_h">
+            <a routerLink="../">个人中心</a>
+        </div>
+        <div class="func_h">
+            <a routerLink="../favorite">我的收藏</a>
+        </div>
+        <div class="func_t">
+            <a routerLink="../download">我的下载</a>
+        </div>
+        <div class="func_h">
+            <a routerLink="." class="func_t">我的关注</a>
+        </div>
+        <div class="func_h">
+            <a routerLink="../setting">个人设置</a>
+        </div>
+        <div class="func_h">
+            <a routerLink="../payment">财务管理</a>
+        </div>
+    </div>
+</div>

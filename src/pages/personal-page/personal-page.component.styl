@@ -1,0 +1,100 @@
+.container {
+    display: flex
+    flex-direction: row
+}
+.info_part {
+    lost-column: 4 / 5
+    display: flex
+    flex-direction: column
+
+    // lost-flex-container: column
+    // display: flex
+    // flex-direction: row
+    .user_name {
+        font-size: var(--theme-size-h1)
+    }
+
+    .college {
+        font-size: var(--theme-size-h5)
+        margin-bottom: 50px
+    }
+
+    .number_part {
+    display: flex
+    flex-direction: row
+        .download_part {
+            lost-column: 1 / 3
+
+            .down_title {
+                font-size: var(--theme-size-h4)
+            }
+
+            .down_num {
+                font-size: var(--theme-size-h2)
+            }
+        }
+
+        .money_part {
+            lost-column: 2 / 3
+
+            .money_title {
+                font-size: var(--theme-size-h4)
+            }
+
+            .money_num {
+                font-size: var(--theme-size-h2)
+            }
+        }
+
+        margin-bottom: 50px
+    }
+
+    .href_part {
+        // lost
+    }
+
+    .recent_part {
+        // display: flex
+        // flex-direction: column
+        .recent_head {
+            display: flex
+            flex-direction: row
+
+            .recent_title {
+                lost-column: 3 / 4
+            }
+
+            .recent_more {
+                margin: 30px
+                lost-align: middle-right
+                lost-column: 1 / 4
+
+            }
+        }
+
+        .recent_subject {
+            lost-column: 1 / 1
+        }
+    }
+}
+
+.func_part {
+    lost-column: 1 / 5
+    position: fixed
+    right: var(--theme-pad-05)
+    top: var(--theme-pad-10)
+
+    .line {
+        width = 100%
+    }
+
+    .func_t {
+        color: var(--palette-base05)
+        margin-top: 5px
+    }
+
+    .func_h {
+        color: var(--palette-base03)
+        margin-top: 5px
+    }
+}
