@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { ProAbstractComponent } from './pro-abstract/pro-abstract.component';
 import { UserAbstractComponent } from './user-abstract/user-abstract.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { UserAbstractComponent } from './user-abstract/user-abstract.component';
     PaginatorComponent,
     ProAbstractComponent,
     UserAbstractComponent,
+    MessageComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule],
   exports: [
@@ -32,6 +34,7 @@ import { UserAbstractComponent } from './user-abstract/user-abstract.component';
     PaginatorComponent,
     ProAbstractComponent,
     UserAbstractComponent,
+    MessageComponent,
   ],
 })
 export class BaseComponentsModule {}

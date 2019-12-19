@@ -212,9 +212,15 @@ a {
   display: flex
   flex-direction: row
   align-items: baseline
+  transition: all 150ms ease-in-out
+
+  &:hover {
+    color: var(--theme-alter)
+  }
 }
 
 .btn-ghost {
+  user-select: none
   margin-left: var(--theme-pad-02)
   margin-right: var(--theme-pad-02)
 }
@@ -273,6 +279,7 @@ btn-default-highlight-text-color = var(--theme-base07)
   font-weight: boldv
   font-size: var(--theme-size-base)
   transition: all 150ms ease-in-out
+  user-select: none
 
   &:hover {
     color: var(--btn-highlight-text-color, btn-default-highlight-text-color)

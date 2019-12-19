@@ -1,17 +1,9 @@
 <div class="mainpage-banner inverted-color-theme" @banner-trigger>
   <div class="container">
     <h1 class="top-jumbo">在这里<br />找到你需要的科研资料</h1>
-    <app-searchbar></app-searchbar>
-  </div>
-</div>
-
-<div class="container">
-  <p>mainpage works!</p>
-  <app-searchbar></app-searchbar>
-  <div class="test">
-    1234
-  </div>
-  <div class="test">
-    5678
+    <app-searchbar
+      (startQuery)="startQuery($event)"
+      [canShowAdvancedSearch]="false"
+    ></app-searchbar>
   </div>
 </div>

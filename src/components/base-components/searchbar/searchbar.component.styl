@@ -3,10 +3,27 @@ searchbar-default-text-color = var(--theme-base01)
 searchbar-default-placeholder-color = var(--theme-base02)
 searchbar-default-border-color = var(--theme-base04)
 searchbar-default-accent-color = var(--theme-accent)
+//
+@lost gutter 24px // ..
+@lost flexbox flex // ..
 
+//
 .searchbar-wrap {
   display: flex
+  flex-direction: column
+}
+
+.searchbar-row {
+  display: flex
   flex-direction: row
+
+  *:first-child {
+    margin-left: 0
+  }
+
+  *:last-child {
+    margin-right: 0
+  }
 }
 
 .searchbar {
@@ -57,14 +74,36 @@ searchbar-default-accent-color = var(--theme-accent)
   }
 }
 
-.search-btn {
+.btn.search-btn {
   font-weight: 500
   margin: var(--theme-pad-00) var(--theme-pad-03)
-  padding: var(--theme-pad-02) var(--theme-pad-04)
+  padding: var(--theme-pad-02) var(--theme-pad-05)
+}
 
-  // --btn-border-color: var(--theme-accent-alter)
-  // --btn-background-color: var(--theme-base02)
-  // --btn-highlight-color: var(--theme-accent)
-  // --btn-highlight-text-color: var(--theme-base07)
-  // --btn-text-color: var(--theme-accent-alter)
+.row {
+  margin-top: var(--theme-pad-01)
+  margin-bottom: var(--theme-pad-01)
+}
+
+.advanced-search {
+  display: flex
+  flex-direction: column
+
+  .advanced-row {
+    margin-top: var(--theme-pad-01)
+    margin-bottom: var(--theme-pad-01)
+    display: flex
+    flex-direction: row
+    align-items: baseline
+    justify-content: stretch
+
+    label {
+      lost-column: 1 / 5
+    }
+
+    .value {
+      flex-grow: 1
+      // lost-column: 4 / 5
+    }
+  }
 }

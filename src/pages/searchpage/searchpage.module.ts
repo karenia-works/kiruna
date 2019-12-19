@@ -10,4 +10,6 @@ import { BrowserModule } from '@angular/platform-browser';
   providers: [],
   bootstrap: [SearchpageComponent],
 })
-export class SearchpageModule {}
+export class SearchpageModule {
+
+}

@@ -10,5 +10,8 @@ export const apiConfig = {
         query: '/api/professor/apply/{id}',
       },
     },
+    paper: {
+      query: '/api/paper',
+    },
   },
 };

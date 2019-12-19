@@ -29,6 +29,7 @@ import { ArticleManageComponent } from '../pages/admin-page/article-manage/artic
 import { ProApplyManageComponent } from '../pages/admin-page/pro-apply-manage/pro-apply-manage.component';
 import { ProManageComponent } from '../pages/admin-page/pro-manage/pro-manage.component';
 import { UserManageComponent } from '../pages/admin-page/user-manage/user-manage.component';
+import { PaperpageComponent } from 'src/pages/paperpage/paperpage.component';
 
 const routes: Routes = [
   {
@@ -52,7 +53,11 @@ const routes: Routes = [
     component: ProfessorRegisterComponent,
   },
   {
-    path: 'p',
+    path: 'p/:id',
+    component: PaperpageComponent,
+  },
+  {
+    path: 'prof/:id',
     component: ProfessorpageComponent,
   },
   {
