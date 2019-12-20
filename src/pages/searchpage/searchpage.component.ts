@@ -41,6 +41,7 @@ export class SearchpageComponent implements OnInit {
               next: val => {
                 this.loading = false;
                 this.articles = val.data;
+                this.returnArticles = this.articles.slice(0, 5);
                 this.totalCount = val.totalCount;
                 this.currentCount = parseInt(params.skip, 10);
               },
@@ -69,6 +70,7 @@ export class SearchpageComponent implements OnInit {
   totalCount: number;
   // 当前页码
   currentCount: number = 0;
+  returnArticles: Paper[];
 
   startQuery(query: PaperQueryParam) {
     console.log('Searched', query);
@@ -80,7 +82,9 @@ export class SearchpageComponent implements OnInit {
   // 页码变化，重新获取用户列表数据
   pageChanged(event) {
     // 查看监听到的数据
-    console.log('event:', event);
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.returnArticles = this.articles.slice(startItem, endItem);
   }
 
   ngOnInit() {}

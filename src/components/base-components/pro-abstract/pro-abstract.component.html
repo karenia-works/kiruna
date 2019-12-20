@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="right-panel">
-      <div class="title">{{name}}</div>
+      <div class="title" ngClass="{'link': linked}" (click)="jump()">{{name}}</div>
       <div class="info">{{ proInfo }}</div>
       <div class="tag-container">
         <div class="tag" *ngFor="let tag of tags">
@@ -16,8 +16,8 @@
     </div>
     <div *ngIf="hasBtn == true">
       <div class="rightbtn">
-        <button class="btn edit-btn">{{btn1Name}}</button>
-        <button class="btn delete-btn">{{btn2Name}}</button>
+        <button (click)="clickBtn1()" class="btn edit-btn">{{btn1Name}}</button>
+        <button (click)="clickBtn2()" class="btn delete-btn">{{btn2Name}}</button>
       </div>
     </div>
   </div>

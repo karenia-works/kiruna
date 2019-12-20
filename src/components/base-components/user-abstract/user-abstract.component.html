@@ -11,8 +11,8 @@
     </div>
     <div *ngIf="hasBtn == true">
       <div class="rightbtn">
-        <button class="btn edit-btn">修改</button>
-        <button class="btn delete-btn">删除</button>
+        <button (click)="clickEdit()" class="btn edit-btn">修改</button>
+        <button (click)="clickDelete()" class="btn delete-btn">删除</button>
       </div>
     </div>
   </div>
