@@ -33,7 +33,7 @@ export class PaperpageComponent implements OnInit {
 
   title;
 
-  paper: Paper;
+  paper?: Paper;
 
   constructor(
     private httpClient: HttpClient,

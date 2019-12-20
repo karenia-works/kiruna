@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="info_part">
+  <div class="info_part" *ngIf="paper !== undefined">
     <h3><br /></h3>
-    <div class="journal">
+    <!-- <div class="journal">
       {{ paper.type }} | {{ journalName }} | {{ journalYear }}({{
         journalVolume
       }})
-    </div>
+    </div> -->
     <div class="jumbotron">
       {{ paper.title }}
     </div>
@@ -53,14 +53,15 @@
     </div> -->
 
     <!-- Authors -->
-    <div class="title-block">
+    <div class="title-block" #authorRef>
       <h1 class="type">
         作者
       </h1>
     </div>
+    没有在本站注册的作者
     <br />
     <!-- Refs -->
-    <div class="title-block">
+    <div class="title-block" #refRef>
       <h1 class="type">
         引用
       </h1>
@@ -70,7 +71,7 @@
     </div>
     <br />
     <!-- Refeds -->
-    <div class="title-block">
+    <div class="title-block" #unrefRef>
       <h1 class="type">
         被引
       </h1>
@@ -95,17 +96,15 @@
       <div class="func_t">
         <a routerLink="." class="func_t">摘要</a>
       </div>
-      <div class="func_h">
+      <!-- <div class="func_h">
         <a routerLink="favorite">全文</a>
-      </div>
+      </div> -->
       <div class="func_h">
-        <a routerLink="download">作者信息</a>
+        <a [ngx-scroll-to]="authorRef">作者信息</a>
       </div>
+      <div class="func_h"><a [ngx-scroll-to]="refRef">引用(12)</a></div>
       <div class="func_h">
-        <a routerLink="follow">引用(12)</a>
-      </div>
-      <div class="func_h">
-        <a routerLink="setting">被引(7)</a>
+        <a [ngx-scroll-to]="unrefRef">被引(7)</a>
       </div>
     </div>
   </div>
