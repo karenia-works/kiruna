@@ -6,6 +6,7 @@ export const apiConfig = {
     },
     professor: {
       single: '/api/professor/{id}',
+      query: '/api/professor',
       apply: {
         add: '/api/professor/apply',
         query: '/api/professor/apply/{id}',
