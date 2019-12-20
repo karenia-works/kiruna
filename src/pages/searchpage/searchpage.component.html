@@ -8,7 +8,7 @@
 
   <div [ngClass]="pagerClass" *ngIf="articles.length !== 0">
     <div class="article-wrapper">
-      <div *ngFor="let article of articles">
+      <div *ngFor="let article of returnArticles">
         <app-article-abstract
           [title]="article.title"
           [articleType]="article.type"
@@ -29,7 +29,7 @@
     <app-paginator
       [totalItems]="totalCount"
       [currentItem]="currentCount"
-      [itemsPerPage]="10"
+      [itemsPerPage]="5"
       [showBoundary]="true"
       (pageChanged)="pageChanged($event)"
     ></app-paginator>

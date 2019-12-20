@@ -15,6 +15,12 @@ export class UserAbstractComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  clickEdit() {
+    //
+  }
+  clickDelete() {
+    alert('删除');
+    //
+  }
 }
 
