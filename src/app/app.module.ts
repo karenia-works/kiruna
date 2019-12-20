@@ -15,6 +15,8 @@ import { RegisterPageComponent } from 'src/pages/register-page/register-page.com
 import { FormsModule } from '@angular/forms';
 import { PaperpageComponent } from '../pages/paperpage/paperpage.component';
 
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,7 @@ import { PaperpageComponent } from '../pages/paperpage/paperpage.component';
     ProfessorPageModule,
     HttpClientModule,
     FormsModule,
+    ScrollToModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

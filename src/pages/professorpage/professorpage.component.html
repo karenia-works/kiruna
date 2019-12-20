@@ -3,11 +3,11 @@
   <div class="left">
     <div class="profile">
       <div class="photo">
-        <img class="profile-photo" src="{{photo}}">
+        <img class="profile-photo" src="{{ photo }}" />
       </div>
       <div class="name-title">
         <div class="jumbotron">
-          {{name}}
+          {{ professor.name }}
         </div>
         <div class="actions">
           <div class="btn-ghost">
@@ -19,46 +19,46 @@
         </div>
       </div>
       <div class="unit">
-        {{unit}}
+        {{ professor.institution }}
       </div>
       <div class="description">
-        {{description}}
+        {{ professor.contract }}
       </div>
       <div class="personal-info">
         <div class="row">
           <div class="key">个人网站</div>
           <div class="val">
-            <a href="{{personalSite}}">
-              {{personalSite}}
+            <a href="{{ personalSite }}">
+              {{ personalSite }}
             </a>
           </div>
         </div>
         <div class="row">
           <div class="key">微博</div>
           <div class="val">
-            <a href="{{weiboSite}}">
-              {{weiboName}}
+            <a href="{{ weiboSite }}">
+              {{ weiboName }}
             </a>
           </div>
         </div>
       </div>
       <div class="tag-container">
-        <div class="tag" *ngFor="let tag of returnedTagsArray">
-          {{tag.name}}
+        <div class="tag" *ngFor="let tag of professor.reachFields">
+          {{ tag }}
         </div>
       </div>
       <div class="data-list">
         <div class="data">
           <div class="unit">发文</div>
-          <div class="number">{{articleNum}}</div>
+          <div class="number">{{ articleNum }}</div>
         </div>
         <div class="data">
           <div class="unit">引用</div>
-          <div class="number">{{quotedNum}}</div>
+          <div class="number">{{ quotedNum }}</div>
         </div>
         <div class="data">
           <div class="unit">下载</div>
-          <div class="number">{{downloadedNum}}</div>
+          <div class="number">{{ downloadedNum }}</div>
         </div>
       </div>
     </div>
@@ -71,12 +71,22 @@
             文章
           </h1>
           <div class="link ghost-btn">
-            <a routerLink="article">查看全部文章 ({{articleNum}})</a>
+            <a routerLink="article">查看全部文章 ({{ articleNum }})</a>
           </div>
         </div>
         <div class="abstract" *ngFor="let article of returnedArticlesArray">
-          <app-article-abstract [title]="article.title" [articleType]="article.articleType" [abstract]="article.abstract" [authors]="article.authors" [releaseDate]="article.releaseDate" [tags]="article.tags" [refCount]="article.refCount" [downloadCount]="article.downloadCount"
-                                [hasFile]="article.hasFile" [showFavorite]="article.showFavorite">
+          <app-article-abstract
+            [title]="article.title"
+            [articleType]="article.articleType"
+            [abstract]="article.abstract"
+            [authors]="article.authors"
+            [releaseDate]="article.releaseDate"
+            [tags]="article.tags"
+            [refCount]="article.refCount"
+            [downloadCount]="article.downloadCount"
+            [hasFile]="article.hasFile"
+            [showFavorite]="article.showFavorite"
+          >
           </app-article-abstract>
         </div>
       </div>
@@ -133,7 +143,7 @@
           <a routerLink="." class="func_t">专家简介</a>
         </div>
         <div class="toc">
-          <a routerLink="article" class="func_h">文章 ({{articleNum}})</a>
+          <a routerLink="article" class="func_h">文章 ({{ articleNum }})</a>
         </div>
         <div class="toc">
           <a routerLink="connection" class="func_h">人脉</a>

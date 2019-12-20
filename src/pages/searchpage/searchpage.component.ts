@@ -59,7 +59,7 @@ export class SearchpageComponent implements OnInit {
   loading: boolean = true;
 
   get pagerClass() {
-    return { loading: this.loading };
+    return { loading: this.loading, pager: true };
   }
 
   articles: Paper[] = [];

@@ -5,6 +5,7 @@ export const apiConfig = {
       info: '/api/account/{id}',
     },
     professor: {
+      single: '/api/professor/{id}',
       apply: {
         add: '/api/professor/apply',
         query: '/api/professor/apply/{id}',
@@ -12,6 +13,7 @@ export const apiConfig = {
     },
     paper: {
       query: '/api/paper',
+      single: '/api/paper/{id}',
     },
   },
 };

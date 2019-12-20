@@ -7,20 +7,23 @@
   ></app-searchbar>
 
   <div [ngClass]="pagerClass" *ngIf="articles.length !== 0">
-    <div *ngFor="let article of articles">
-      <app-article-abstract
-        [title]="article.title"
-        [articleType]="article.type"
-        [abstract]="article.summary"
-        [authors]="article.authors"
-        [releaseDate]="article.date"
-        [tags]="article.keywords"
-        [refCount]="article.quote"
-        [hasFile]="article.site"
-        [showFavorite]="false"
-        [hasBtn]="false"
-      >
-      </app-article-abstract>
+    <div class="article-wrapper">
+      <div *ngFor="let article of articles">
+        <app-article-abstract
+          [title]="article.title"
+          [articleType]="article.type"
+          [abstract]="article.summary"
+          [authors]="article.authors"
+          [releaseDate]="article.date"
+          [tags]="article.keywords"
+          [refCount]="article.quote"
+          [hasFile]="article.site"
+          [showFavorite]="false"
+          [hasBtn]="false"
+          [id]="article.paperId"
+        >
+        </app-article-abstract>
+      </div>
     </div>
 
     <app-paginator
@@ -35,5 +38,4 @@
     <div class="jumbotron">啥都没搜到</div>
     <div class="smaller">换一下关键词试试吧</div>
   </div>
-  >>>>>>> master
 </div>

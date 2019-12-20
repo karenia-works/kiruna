@@ -874,6 +874,13 @@
     tree-kill "1.2.1"
     webpack-sources "1.4.3"
 
+"@nicky-lenaers/ngx-scroll-to@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.npm.taobao.org/@nicky-lenaers/ngx-scroll-to/download/@nicky-lenaers/ngx-scroll-to-3.0.1.tgz#e690e2ce7c6195373ad223cee411daaab3831b12"
+  integrity sha1-5pDiznxhlTc60iPO5BHaqrODGxI=
+  dependencies:
+    tslib "^1.9.0"
+
 "@schematics/angular@8.3.20":
   version "8.3.20"
   resolved "https://registry.npm.taobao.org/@schematics/angular/download/@schematics/angular-8.3.20.tgz?cache=0&sync_timestamp=1576175315658&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40schematics%2Fangular%2Fdownload%2F%40schematics%2Fangular-8.3.20.tgz#737d0a73e891446899a2267c4cc348b6c5a78ca8"
