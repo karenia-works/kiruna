@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {users} from '../../../userList';
+import {follows} from '../../../followList';
 import { PageChangedEvent } from '../../../components/base-components/paginator/paginator.component';
 @Component({
   selector: 'app-user-manage',
@@ -7,7 +7,7 @@ import { PageChangedEvent } from '../../../components/base-components/paginator/
   styleUrls: ['./user-manage.component.styl']
 })
 export class UserManageComponent implements OnInit {
-  users = users;
+  users = follows;
   returnedUsers;
 
   ngOnInit(): void {

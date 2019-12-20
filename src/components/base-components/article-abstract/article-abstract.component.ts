@@ -24,6 +24,7 @@ export class ArticleAbstractComponent implements OnInit {
   @Input() hasBtn: boolean = false;
 
   @Input() linked: boolean = true;
+  deleted: boolean = false;
   constructor(private router: Router) {}
 
   ngOnInit() {}
@@ -38,5 +39,13 @@ export class ArticleAbstractComponent implements OnInit {
     if (this.linked && this.id) {
       this.router.navigateByUrl('/p/' + this.id);
     }
+  }
+  clickEdit() {
+    // 接口
+  }
+  clickDelete() {
+    alert('删除');
+    this.deleted = true;
+    // 接口
   }
 }

@@ -2,7 +2,6 @@
   <h5><br/></h5>
 
   <div class="left_part">
-    <app-searchbar [type]="'用户'"></app-searchbar>
     <div *ngFor="let user of returnedUsers">
       <app-user-abstract
         [name]="user.name"

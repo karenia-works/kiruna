@@ -2,19 +2,19 @@
   <h5><br/></h5>
 
   <div class="left_part">
-    <app-searchbar [type]="'专家'"></app-searchbar>
-    <div *ngFor="let pro of returnedPros">
+    <div *ngFor="let pro of professors">
       <app-pro-abstract
       [name]="pro.name"
-      [photoURL]="pro.photoURL"
-      [unit]="pro.unit"
-      [description]="pro.description"
-      [tags]="pro.tags"
-      [articleCount]="pro.articleCount"
-      [citationsCount]="pro.citationsCount"
-      [downloadCount]="pro.downloadCount"
+      [photoURL]="'https://pic3.zhimg.com/a82b51c4284beda5b29d645fa4f91c97_xl.jpg'"
+      [unit]="pro.institution"
+      [description]="pro.contract"
+      [tags]="pro.reachFields"
+      [articleCount]="30"
+      [citationsCount]="115"
+      [downloadCount]="65536"
       [showFavorite]="true"
-      [hasBtn]="true">
+      [hasBtn]="true"
+      [id] = "pro.professorId">
 
       </app-pro-abstract>
     </div>
@@ -31,13 +31,13 @@
     <div class="func_h">
       <a routerLink="../">个人中心</a>
     </div>
-    <div class="func_t">
+    <div class="func_h">
       <a routerLink="../user">用户管理</a>
     </div>
     <div class="func_h">
       <a routerLink="../article">论文管理</a>
     </div>
-    <div class="func_h">
+    <div class="func_t">
       <a routerLink="." class="func_t">专家管理</a>
     </div>
     <div class="func_h">
