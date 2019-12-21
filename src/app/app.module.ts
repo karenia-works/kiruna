@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { PaperpageComponent } from '../pages/paperpage/paperpage.component';
 
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { ExplorePageComponent } from '../pages/explore-page/explore-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     LoginPageComponent,
     RegisterPageComponent,
     PaperpageComponent,
+    ExplorePageComponent,
   ],
   imports: [
     BrowserModule,
