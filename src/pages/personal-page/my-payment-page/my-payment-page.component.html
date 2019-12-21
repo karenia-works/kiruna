@@ -17,7 +17,7 @@
 
         <h3>您将支付{{payNum}}元。</h3>
         <div class="pay">
-        <h4 class="t4">扫码支付：</h4> 
+        <h4 class="t4">扫码支付：</h4>
         <button (click)="onClickMe()" class="btn pay-btn">完成支付</button>
         </div>
 
@@ -31,12 +31,25 @@
         <div class="right-wrapper">
           <div class="line"></div>
           <div class="summary">
-            <div routerLink=".." class="toc-fat">个人中心</div>
-            <div routerLink="../favorite" class="toc">我的收藏</div>
-            <div routerLink="../download" class="toc">我的下载</div>
-            <div routerLink="../follow" class="toc">我的关注</div>
-            <div routerLink="../setting" class="toc">个人设置</div>
-            <div routerLink="../payment" class="toc">财务管理</div>
+            <h5></h5>
+            <div class="toc">
+              <a routerLink="..">个人中心</a>
+            </div>
+            <div class="toc">
+              <a routerLink="../favorite">我的收藏</a>
+            </div>
+            <div class="toc">
+              <a routerLink="../download">我的下载</a>
+            </div>
+            <div class="toc">
+              <a routerLink="../follow">我的关注</a>
+            </div>
+            <div class="toc">
+              <a routerLink="../setting">个人设置</a>
+            </div>
+            <div class="toc-fat">
+              <a routerLink="../payment">财务管理</a>
+            </div>
           </div>
         </div>
       </div>
