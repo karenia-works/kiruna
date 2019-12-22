@@ -4,23 +4,21 @@
     <h1 class="recent_title">
       我的下载
     </h1>
-    <div>
-      <div *ngFor="let article of returnedArray">
+    <div class="recent-subject">
+      <div *ngFor="let article of articles">
         <app-article-abstract
+          [id]="article.paperId"
           [title]="article.title"
-          [articleType]="article.articleType"
-          [abstract]="article.abstract"
+          [articleType]="article.type"
+          [abstract]="article.summary"
           [authors]="article.authors"
-          [releaseDate]="article.releaseDate"
-          [tags]="article.tags"
-          [refCount]="article.refCount"
-          [downloadCount]="article.downloadCount"
-          [hasFile]="article.hasFile"
-          [showFavorite]="article.showFavorite"
+          [releaseDate]="article.date"
+          [tags]="article.keywords"
+          [refCount]="article.quote"
+          [showFavorite]="false"
         >
         </app-article-abstract>
       </div>
-
     </div>
     <app-paginator
       [totalItems]="articles.length"

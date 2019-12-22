@@ -30,7 +30,11 @@ export class ArticleAbstractComponent implements OnInit {
   ngOnInit() {}
 
   get articleInfo(): string {
-    return [this.articleType, dayjs(this.releaseDate).toString(), this.authors]
+    return [
+      this.articleType,
+      dayjs(this.releaseDate).format('YYYY-MM-DD'),
+      this.authors,
+    ]
       .filter(val => val !== undefined)
       .join(' | ');
   }

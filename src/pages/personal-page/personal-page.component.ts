@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { articles } from '../../articleAbstractList';
-import { UserInfo } from 'src/services/account/account.service';
+import { UserInfo, AccountService } from 'src/services/account/account.service';
 import { environment } from 'src/environments/environment';
-import { ApiResult } from 'src/models/result';
+import { ApiResult, ApiListResult } from 'src/models/result';
 import { HttpClient } from '@angular/common/http';
 import { UserAccount } from 'src/models/account';
+import { Paper } from 'src/models/paper';
 
 @Component({
   selector: 'app-personal-page',
@@ -12,31 +13,35 @@ import { UserAccount } from 'src/models/account';
   styleUrls: ['./personal-page.component.styl'],
 })
 export class PersonalPageComponent implements OnInit {
-  articles = articles;
+  articles: Paper[];
   returnedArray;
   name;
   college;
   downloadNum;
   MoneyLeft;
+  user: UserAccount;
 
-  user?: UserAccount
-
-  constructor(private httpClient: HttpClient) {
-
-    this.httpClient.get<UserAccount>(environment.endpoint + "/api/user/me").subscribe({
-      next: value => {
-        this.user = value
-      }
-    })
-    this.returnedArray = this.articles.slice(0, 3);
-    this.name = 'Dio';
-    this.college = '北京航空航天大学';
-    this.downloadNum = '12';
-    this.MoneyLeft = '14.33';
+  constructor(
+    private httpClient: HttpClient,
+    private accountService: AccountService
+  ) {
+    this.user = accountService.userAccount;
+    this.httpClient
+      .get<ApiListResult<Paper>>(environment.endpoint + '/api/paper/papers', {
+        params: {
+          tgt: this.accountService.userAccount.favoriteList.map(i =>
+            i.toString()
+          ),
+        },
+      })
+      .subscribe({
+        next: val => {
+          this.articles = val.data.slice(0, 3);
+        },
+      });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }
 
 export class PersonalPageInfo {

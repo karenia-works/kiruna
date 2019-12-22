@@ -4,13 +4,14 @@ import { Observable, config, Subject } from 'rxjs';
 import 'rxjs/operators';
 import { apiConfig } from 'src/environments/backend-config';
 import { multicast } from 'rxjs/operators';
-import { LoginResult, TokenContext } from 'src/models/account';
+import { LoginResult, TokenContext, UserAccount } from 'src/models/account';
 import { environment } from 'src/environments/environment';
 import { ApiResult } from 'src/models/result';
 import qs from 'qs';
+import JwtDecode from 'jwt-decode';
 
 @Injectable({ providedIn: 'root' })
-export class AccountService extends Subject<UserInfo | undefined>
+export class AccountService extends Subject<UserAccount | undefined>
   implements HttpInterceptor {
   /**
    *
@@ -23,6 +24,7 @@ export class AccountService extends Subject<UserInfo | undefined>
 
   public loggedIn = false;
   loginResult?: LoginResult;
+  userAccount?: UserAccount;
 
   /**
    * Intercepts any outgoing HTTP request toward backend and add access token to them
@@ -44,15 +46,19 @@ export class AccountService extends Subject<UserInfo | undefined>
   saveLoginData() {
     if (this.loggedIn) {
       window.localStorage.setItem('login', JSON.stringify(this.loginResult));
+      window.localStorage.setItem('user', JSON.stringify(this.userAccount));
     }
   }
 
   async loadLoginData() {
     let login = window.localStorage.getItem('login');
-    if (login !== null) {
+    let user = window.localStorage.getItem('user');
+    if (login !== null && user !== null) {
       this.loginResult = JSON.parse(login);
+      let username = JwtDecode(this.loginResult.access_token)['sub'];
       this.loggedIn = true;
-      this.next({ username: 'Some' });
+      this.userAccount = JSON.parse(user);
+      this.next(this.userAccount);
     }
   }
 
@@ -83,6 +89,13 @@ export class AccountService extends Subject<UserInfo | undefined>
         .toPromise();
       this.loginResult = result;
       this.loggedIn = true;
+      let username = JwtDecode(this.loginResult.access_token)['sub'];
+      let account = await this.httpClient
+        .get<ApiResult<UserAccount>>(
+          environment.endpoint + '/api/user/email/' + username
+        )
+        .toPromise();
+      this.userAccount = account.data;
       this.saveLoginData();
       return result;
     } catch (e) {

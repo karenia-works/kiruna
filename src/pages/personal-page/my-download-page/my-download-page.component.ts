@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { articles } from '../../../articleAbstractList';
 import { PageChangedEvent } from 'src/components/base-components/paginator/paginator.component';
+import { AccountService } from 'src/services/account/account.service';
+import { HttpClient } from '@angular/common/http';
+import { ApiListResult } from 'src/models/result';
+import { Paper } from 'src/models/paper';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-my-download-page',
@@ -8,18 +13,24 @@ import { PageChangedEvent } from 'src/components/base-components/paginator/pagin
   styleUrls: ['./my-download-page.component.styl'],
 })
 export class MyDownloadPageComponent implements OnInit {
-  articles = articles;
-  returnedArray;
+  articles: Paper[];
 
-  constructor() {}
+  constructor(
+    private httpclient: HttpClient,
+    private userService: AccountService
+  ) {}
 
   ngOnInit() {
-    this.returnedArray = this.articles.slice(0, 5);
-  }
-
-  pageChanged(event: PageChangedEvent): void {
-    const startItem = (event.page - 1) * event.itemsPerPage;
-    const endItem = event.page * event.itemsPerPage;
-    this.returnedArray = this.articles.slice(startItem, endItem);
+    this.httpclient
+      .get<ApiListResult<Paper>>(environment.endpoint + '/api/paper/papers', {
+        params: {
+          tgt: this.userService.userAccount.downloadList.map(i => i.toString()),
+        },
+      })
+      .subscribe({
+        next: val => {
+          this.articles = val.data;
+        },
+      });
   }
 }
