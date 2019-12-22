@@ -15,7 +15,7 @@ import { Subject } from 'rxjs';
   templateUrl: './pro-manage.component.html',
   styleUrls: ['./pro-manage.component.styl'],
 })
-export class ProSearchComponent implements OnInit {
+export class ProManageComponent implements OnInit {
   professors: Professor[];
   returnedPros: Professor[];
   decription;

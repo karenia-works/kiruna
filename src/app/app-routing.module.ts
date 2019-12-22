@@ -35,6 +35,7 @@ import { ProApplyManageComponent } from '../pages/admin-page/pro-apply-manage/pr
 import { ProManageComponent } from '../pages/admin-page/pro-manage/pro-manage.component';
 import { UserManageComponent } from '../pages/admin-page/user-manage/user-manage.component';
 import { ExplorePageComponent } from '../pages/explore-page/explore-page.component';
+import { ProSearchComponent } from 'src/pages/pro-search/pro-search.component';
 
 const routes: Routes = [
   {
@@ -65,6 +66,7 @@ const routes: Routes = [
     path: 'p/:id',
     component: PaperpageComponent,
   },
+  { path: 'prof/search', component: ProSearchComponent },
   {
     path: 'prof/:id',
     children: [

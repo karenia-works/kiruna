@@ -1,0 +1,44 @@
+<div class="container">
+  <h5><br /></h5>
+  <app-searchbar
+    (startQuery)="startQuery($event)"
+    [canShowAdvancedSearch]="false"
+    [type]="'专家'"
+  ></app-searchbar>
+
+  <div class="left_part">
+    <div *ngIf="this.professors && this.professors.length != 0">
+      <div *ngFor="let pro of this.professors">
+        <app-pro-abstract
+          [name]="pro.name"
+          [photoURL]="
+            'https://pic3.zhimg.com/a82b51c4284beda5b29d645fa4f91c97_xl.jpg'
+          "
+          [unit]="pro.institution"
+          [description]="pro.contract"
+          [tags]="pro.reachFields"
+          [articleCount]="30"
+          [citationsCount]="115"
+          [downloadCount]="65536"
+          [showFavorite]="true"
+          [hasBtn]="true"
+          [id]="pro.professorId"
+        >
+        </app-pro-abstract>
+      </div>
+      <app-paginator
+        [totalItems]="professors.length"
+        [itemsPerPage]="5"
+        [showBoundary]="true"
+        (pageChanged)="pageChanged($event)"
+      >
+      </app-paginator>
+    </div>
+    <div
+      class="jumbotron"
+      *ngIf="this.professors == undefined || this.professors.length == 0"
+    >
+      没有搜到
+    </div>
+  </div>
+</div>

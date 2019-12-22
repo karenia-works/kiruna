@@ -17,6 +17,7 @@ import { PaperpageComponent } from '../pages/paperpage/paperpage.component';
 
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { ExplorePageComponent } from '../pages/explore-page/explore-page.component';
+import { ProSearchComponent } from '../pages/pro-search/pro-search.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ExplorePageComponent } from '../pages/explore-page/explore-page.compone
     RegisterPageComponent,
     PaperpageComponent,
     ExplorePageComponent,
+
   ],
   imports: [
     BrowserModule,
