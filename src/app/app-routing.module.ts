@@ -34,6 +34,7 @@ import { ArticleManageComponent } from '../pages/admin-page/article-manage/artic
 import { ProApplyManageComponent } from '../pages/admin-page/pro-apply-manage/pro-apply-manage.component';
 import { ProManageComponent } from '../pages/admin-page/pro-manage/pro-manage.component';
 import { UserManageComponent } from '../pages/admin-page/user-manage/user-manage.component';
+import { ExplorePageComponent } from '../pages/explore-page/explore-page.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 's',
     component: SearchpageComponent,
+  },
+  {
+    path: 'explore',
+    component: ExplorePageComponent,
   },
   {
     path: 'login',
