@@ -1,38 +1,20 @@
 <div class="container" style="padding-top: 16px">
   <h5><br /></h5>
-  <app-searchbar
-    [params]="queryParams"
-    (startQuery)="startQuery($event)"
-    [canShowAdvancedSearch]="true"
-  ></app-searchbar>
+  <app-searchbar [params]="queryParams" (startQuery)="startQuery($event)" [canShowAdvancedSearch]="true">
+  </app-searchbar>
 
   <div [ngClass]="pagerClass" *ngIf="articles.length !== 0">
     <div class="article-wrapper">
-      <div *ngFor="let article of returnArticles">
-        <app-article-abstract
-          [title]="article.title"
-          [articleType]="article.type"
-          [abstract]="article.summary"
-          [authors]="article.authors"
-          [releaseDate]="article.date"
-          [tags]="article.keywords"
-          [refCount]="article.quote"
-          [hasFile]="article.site"
-          [showFavorite]="false"
-          [hasBtn]="false"
-          [id]="article.paperId"
-        >
+      <div *ngFor="let article of articles">
+        <app-article-abstract [title]="article.title" [articleType]="article.type" [abstract]="article.summary"
+          [authors]="article.authors" [releaseDate]="article.date" [tags]="article.keywords" [refCount]="article.quote"
+          [hasFile]="article.site" [showFavorite]="false" [hasBtn]="false" [id]="article.paperId">
         </app-article-abstract>
       </div>
     </div>
 
-    <app-paginator
-      [totalItems]="totalCount"
-      [currentItem]="currentCount"
-      [itemsPerPage]="5"
-      [showBoundary]="true"
-      (pageChanged)="pageChanged($event)"
-    ></app-paginator>
+    <app-paginator [totalItems]="totalCount" [currentItem]="currentCount" [itemsPerPage]="itemsPerPage"
+      [showBoundary]="true" (pageChanged)="pageChanged($event)"></app-paginator>
   </div>
   <div class="no-result" *ngIf="articles.length === 0 && searching">
     <div class="jumbotron">啥都没搜到</div>

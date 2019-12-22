@@ -12,7 +12,7 @@ import { Params, ParamMap } from '@angular/router';
   providedIn: 'root',
 })
 export class PaperSearchService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   query(query: PaperQueryParam): PaperQuery {
     if (query.skip === undefined) {
@@ -51,9 +51,9 @@ export class PaperQuery extends Subject<ApiListResult<Paper>> {
 
   transform(input: PaperQueryParam): { [param: string]: string | string[] } {
     let params: { [param: string]: string | string[] } = {};
-    if (input.kw !== undefined) params.summary = input.kw;
-    if (input.keyword !== undefined) params.keyword = input.keyword;
-    if (input.author !== undefined) params.author = input.author;
+    if (input.kw !== undefined && input.kw !== "") params.summary = input.kw;
+    if (input.keyword !== undefined && input.keyword !== []) params.keyword = input.keyword;
+    if (input.author !== undefined && input.author !== []) params.author = input.author;
     if (input.startTime !== undefined)
       params.startTime = input.startTime.toISOString();
     if (input.endTime !== undefined)

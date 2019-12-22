@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { articles } from '../../../articleAbstractList';
 import { PageChangedEvent } from 'src/components/base-components/paginator/paginator.component';
+import { PaperSearchService } from 'src/services/data/paper-search.service'
 
 @Component({
   selector: 'app-my-favorite-page',
@@ -11,10 +12,17 @@ export class MyFavoritePageComponent implements OnInit {
   articles = articles;
   returnedArray;
 
-  constructor() {}
+  constructor(private queryService: PaperSearchService) { }
 
   ngOnInit() {
-    this.returnedArray = this.articles.slice(0, 5);
+    this.queryService
+      .query({})
+      .query()
+      .subscribe({
+        next: val => {
+          this.returnedArray = val.data;
+        },
+      });
   }
 
   pageChanged(event: PageChangedEvent): void {

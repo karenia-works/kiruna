@@ -61,7 +61,7 @@
     没有在本站注册的作者
     <br />
     <!-- Refs -->
-    <div class="title-block" #refRef>
+    <!-- <div class="title-block" #refRef>
       <h1 class="type">
         引用
       </h1>
@@ -70,7 +70,7 @@
       </div>
     </div>
     <br />
-    <!-- Refeds -->
+    Refeds
     <div class="title-block" #unrefRef>
       <h1 class="type">
         被引
@@ -78,7 +78,7 @@
       <div class="link ghost-btn">
         查看所有被引 (7)
       </div>
-    </div>
+    </div> -->
     <br />
   </div>
 
@@ -102,9 +102,9 @@
       <div class="func_h">
         <a [ngx-scroll-to]="authorRef">作者信息</a>
       </div>
-      <div class="func_h"><a [ngx-scroll-to]="refRef">引用(12)</a></div>
+      <!-- <div class="func_h"><a [ngx-scroll-to]="refRef">引用(12)</a></div> -->
       <div class="func_h">
-        <a [ngx-scroll-to]="unrefRef">被引(7)</a>
+        <a [ngx-scroll-to]="unrefRef">被引({{paper.quote}})</a>
       </div>
     </div>
   </div>

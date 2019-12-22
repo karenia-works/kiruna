@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { articles } from '../../articleAbstractList';
+import { UserInfo } from 'src/services/account/account.service';
+import { environment } from 'src/environments/environment';
+import { ApiResult } from 'src/models/result';
+import { HttpClient } from '@angular/common/http';
+import { UserAccount } from 'src/models/account';
 
 @Component({
   selector: 'app-personal-page',
@@ -14,14 +19,23 @@ export class PersonalPageComponent implements OnInit {
   downloadNum;
   MoneyLeft;
 
-  constructor() {}
+  user?: UserAccount
 
-  ngOnInit() {
+  constructor(private httpClient: HttpClient) {
+
+    this.httpClient.get<UserAccount>(environment.endpoint + "/api/user/me").subscribe({
+      next: value => {
+        this.user = value
+      }
+    })
     this.returnedArray = this.articles.slice(0, 3);
     this.name = 'Dio';
     this.college = '北京航空航天大学';
     this.downloadNum = '12';
     this.MoneyLeft = '14.33';
+  }
+
+  ngOnInit() {
   }
 }
 
