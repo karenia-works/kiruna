@@ -15,7 +15,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./pro-manage.component.styl'],
 })
 export class ProManageComponent implements OnInit {
-  professors: Professor[];
+  professors: Professor[] = [];
   returnedPros: Professor[];
   decription;
   id;
@@ -29,15 +29,18 @@ export class ProManageComponent implements OnInit {
   ) {
     this.route.params.subscribe({
       next: param => {
+        let query: any = {};
+        if (param.offset === undefined) query.offset = 0;
+        else query.offset = parseInt(param.offset);
+        if (param.limit === undefined) query.limit = 20;
+        else query.limit = parseInt(param.limit);
+        if (param.kw !== undefined) query.keyword = param.kw;
+
         this.httpClient
           .get<ApiListResult<Professor>>(
             environment.endpoint + apiConfig.endpoints.professor.query,
             {
-              params: {
-                offset: param.offset,
-                limit: param.limit,
-                keyword: param.keyword,
-              },
+              params: query,
             }
           )
           .subscribe({

@@ -33,15 +33,14 @@ export class SearchpageComponent implements OnInit {
           this.queryParams.kw
         ) {
           this.loading = true;
-          this.searching = true;
           queryService
             .query(this.queryParams)
             .query()
             .subscribe({
               next: val => {
+                this.searching = true;
                 this.loading = false;
                 this.articles = val.data;
-                this.returnArticles = this.articles.slice(0, 5);
                 this.totalCount = val.totalCount;
                 this.currentCount = parseInt(params.skip, 10);
               },
@@ -65,7 +64,7 @@ export class SearchpageComponent implements OnInit {
 
   articles: Paper[] = [];
   // 分页组件配置项
-  private itemsPerpage: number = 20;
+  itemsPerPage: number = 20;
   // 总条数
   totalCount: number;
   // 当前页码
@@ -82,10 +81,12 @@ export class SearchpageComponent implements OnInit {
   // 页码变化，重新获取用户列表数据
   pageChanged(event) {
     // 查看监听到的数据
-    const startItem = (event.page - 1) * event.itemsPerPage;
-    const endItem = event.page * event.itemsPerPage;
-    this.returnArticles = this.articles.slice(startItem, endItem);
+    const startItem = (event.page - 1) * this.itemsPerPage;
+    this.queryParams.skip = startItem;
+    this.router.navigate(['s'], {
+      queryParams: paperQueryParamToWebQuery(this.queryParams),
+    });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

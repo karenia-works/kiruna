@@ -2,27 +2,16 @@
   <div class="container">
     <div class="login">
       <h1 class="textdarcula">注册</h1>
+      <h5 class="textdarcula">昵称</h5>
+      <input name="username" id="username" type="text" class="username-box" [(ngModel)]="userName" />
       <h5 class="textdarcula">用户名</h5>
-      <input name="username" id="username" type="text" class="username-box" />
+      <input name="mail" id="mail" type="text" class="username-box" [(ngModel)]="email" />
       <h5 class="textdarcula">密码</h5>
-      <input
-        name="password"
-        id="password"
-        type="password"
-        class="username-box"
-      />
-      <h5 class="textdarcula">邮箱</h5>
-      <input name="mail" id="mail" type="text" class="username-box" />
-      <h5 class="textdarcula">手机号码</h5>
-      <input
-        name="phonenum"
-        id="phonenum"
-        type="text"
-        class="username-box"
-        placeholder=" +86"
-      />
+      <input name="password" id="password" type="password" class="username-box" [(ngModel)]="password" />
+      <!-- <h5 class="textdarcula">手机号码</h5>
+      <input name="phonenum" id="phonenum" type="text" class="username-box" placeholder=" +86" /> -->
       <div class="foot">
-        <button class="btn login-btn">注册</button>
+        <button class="btn login-btn" (click)="register()">注册</button>
         <button class="btn ghost-btn" routerLink="/login">登录</button>
       </div>
     </div>
